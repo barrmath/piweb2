@@ -1,0 +1,78 @@
+site_name: "Piweb : Site autohébergé sur un Raspberry pi"
+repo_url: https://github.com/barrmath
+nav:
+  - Présentation: index.md  
+  - Réseaux:
+    - reseaux/reseaux_intro.md
+    - Auto-hébergement : reseaux/autohebergement.md
+    - Monitoring : reseaux/monitoring.md
+    - Gunicorn : reseaux/gunicorn.md
+    - Proxy : reseaux/proxy.md
+    - Certificat : reseaux/certificats.md
+    - Podman/Docker : reseaux/podman.md
+  - Programmation: 
+    - programmation/programmation_intro.md
+    - Git : programmation/git.md
+    - HTML/CSS : programmation/htmlcss.md
+    - Python : programmation/python.md
+    - Flask : programmation/flask.md
+    - Jinja : programmation/jinja.md
+  - Data : 
+    - data/data_intro.md
+    - SQL : data/sql.md
+    - Pandas : data/pandas.md
+    - Graphique : data/graphique.md
+  - A propos de moi: about.md
+theme:
+  name: material
+  custom_dir: overrides
+  language: fr
+  favicon: favicon/favicon.ico
+  logo: logo/logo.png
+  # police d'ecriture False pour utiliser la police par default du navigateur
+  font: false
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: passer en mode clair
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Passer en mode sombre
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: passer en mode par default du système
+  features :
+    - navigation.header
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - header.autohide
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
