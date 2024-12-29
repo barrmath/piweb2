@@ -2,8 +2,8 @@
 
 Vous trouverez dans le menu diverses techno data :
 
-SQL : Base de SQL
+[SQL](sql.md) : Base de SQL
 
-Pandas : Base de pandas
+[Pandas](pandas.md) : Base de pandas
 
-Graphique : diverses façons de faire des graphes sous Python.
+[Graphique](graphique.md) : diverses façons de faire des graphes sous Python.

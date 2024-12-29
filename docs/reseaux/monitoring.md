@@ -90,7 +90,7 @@ Alors l´identifiant par défaut sont admin mot de passe admin. (Je vous conseil
 
 ![grafana login](monitoring/grafanalogin.png)
 
-Une fois connecté, cliquez sur connection-> add a new connection puis cherchez prometheus.
+Une fois connecté, cliquez sur connection puis sur add a new connection puis cherchez prometheus.
 
 ![grafana connection](monitoring/grafana_add_new_connection.png)
 

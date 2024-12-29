@@ -98,6 +98,90 @@ http { # nom du service
     }
 ```
 
+Pour un site statique, ou les fichiers statiques pour alléger le backend, il vous faut un utilisateur avec les droits d'accès aux fichiers, préciser le chemin web avec location et indiqué diverses options.
+
+```nginx
+user tux;
+   server {
+        server_name  barrmath.ovh ;
+        location / {
+                alias /home/tux/piweb2/site/;
+                index index.html;
+                try_files $uri $uri/ $uri.html =404;
+        }
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   /usr/share/nginx/html;
+        }
+    }
+
+```
+
+!!! tips
+
+    La fonction envsubst peut vous permettre de modifier vos fichier conf dans des containeurs de votre nginx.conf. Il suffit de faire un template.
+
+exemple:
+
+fichier nginx.template
+
+```nginx
+user root;
+worker_processes                auto; # it will be determinate automatically by the number of core
+
+error_log                       /var/log/nginx/error.log warn;
+#pid                             /var/run/nginx/nginx.pid; # it permit you to use rc-service nginx reload|restart|stop|start
+
+events {
+    worker_connections          1024;
+}
+
+http {
+    include                     /etc/nginx/mime.types;
+    default_type                application/octet-stream;
+    sendfile                    on;
+    access_log                  /var/log/nginx/access.log;
+    keepalive_timeout           3000;
+    server {
+        listen                  80;
+        location ${BASE_URL}static/{
+            alias /app/benevalibre/var/static/;
+            # Optionnel : ne pas journaliser l'accès au fichier statisque
+            access_log off;
+        }
+        location ${BASE_URL}media/ {
+            alias /app/benevalibre/var/media;
+            # Optionnel : ne pas journaliser l'accès aux media
+            access_log off;
+        }
+        location ${BASE_URL}favicon.ico {
+            alias /app/benevalibre/var/static/favicon/favicon.ico;
+            # Optionnel : ne pas journaliser l'accès au favicon
+            access_log off;
+        }
+        location ${BASE_URL}{
+            proxy_set_header Host ${DOLLAR}http_host;
+            proxy_set_header X-Forwarded-For ${DOLLAR}proxy_add_x_forwarded_for;
+            proxy_redirect off;
+            proxy_pass http://127.0.0.1:8000;
+        }
+        error_page              500 502 503 504  /50x.html;
+        location /50x.html {
+              root /var/lib/nginx/html;
+        }
+    }
+}
+```
+
+```shell
+export DOLLAR="$"
+envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
+```
+
+!!! tips
+    Le export dollar="$" permet de garder le $ nécessaire dans les proxy_set_header
+
+
 ### Alternative
 
 Suite au [rachat de Nginx par F5 Network](https://www.lemagit.fr/actualites/252459426/Nginx-tombe-dans-le-giron-de-F5-Networks-pour-670-millions-de-dollars){target="_blank"}, certaines personnes ont proposé un fork de nginx.
