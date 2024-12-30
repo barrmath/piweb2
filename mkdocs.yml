@@ -10,6 +10,7 @@ nav:
     - Proxy : reseaux/proxy.md
     - Certificat : reseaux/certificats.md
     - Podman/Docker : reseaux/podman.md
+    - Jenkins : reseaux/jenkins.md
   - Programmation: 
     - programmation/programmation_intro.md
     - Git : programmation/git.md

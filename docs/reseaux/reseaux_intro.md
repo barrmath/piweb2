@@ -13,3 +13,5 @@ Vous trouverez dans le menu mes projets réseaux :
 [Certificat](certificats.md) : Mise en place d'un certificat SSL à l'aide de certbot.
 
 [Podman/Docker](podman.md) : conteneurisation des applications
+
+[Jenkins](jenkins.md) : automatisation du deploiements
