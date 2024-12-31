@@ -14,4 +14,6 @@ Vous trouverez dans le menu mes projets réseaux :
 
 [Podman/Docker](podman.md) : conteneurisation des applications
 
+[Docker-compose](docker-compose.md) : orchestration des conteneurs
+
 [Jenkins](jenkins.md) : automatisation du deploiements
