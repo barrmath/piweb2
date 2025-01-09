@@ -1,4 +1,4 @@
-# Programmation
+<h1>Programmation</h1>
 
 Vous trouverez dans le menu :
 

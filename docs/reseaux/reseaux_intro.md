@@ -1,4 +1,4 @@
-# Réseaux
+<h1>Réseaux</h1>
 
 Vous trouverez dans le menu mes projets réseaux :
 
