@@ -160,9 +160,18 @@ Votre site devrait s'afficher.
 
 Pour les noms de domaine freebox gratuit avec un abonnement : cliquer sur nom de domaine -> ajouter un nom de domaine Freebox.
 Entrer le nom de domaine souhaité puis valider. Au bout de quelques minutes, votre nom de domaine devrait être actif. (et Free configure les DNS)
-Pour un vrai nom de domaine : contacter un fournisseur par exemple <a href="https://www.ovhcloud.com/fr/domains/" target="_blank">OVH</a>.
+Pour un vrai nom de domaine : contacter un fournisseur par exemple [OVH.](https://www.ovhcloud.com/fr/domains/){target="_blank"}
 Il faudra passer par leurs DNS management pour faire pointer votre nom de domaine vers votre adresse IP.
 
+![config nom de domaine](autohebergement/ovh.png)
+
+Rapidement les types :
+
+- **A** indique une adresse IP4 (votre serveur avec une adresse 188.125.191.200)
+- **AAAA** indique une adresse IPv6 (votre serveur avec une adresse 1050:0000:0000:0000:0005:0600:300c:326b)
+- **NS** Corresponds au serveur DNS
+
+Plus d'information [ici.](https://help.ovhcloud.com/csm/fr-dns-zone-general-information?id=kb_article_view&sysparm_article=KB0063450){target="_blank"}
 Si tout se passe bien, vous avez votre site en ligne.
 
 ## Ressources
