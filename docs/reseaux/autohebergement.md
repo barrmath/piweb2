@@ -5,7 +5,7 @@ Le but de cette page est de vous décrire comment héberger votre petit site web
 Matériel :
 
 - Un routeur (ou une machin-box).
-- Une adresse IP statique avec les ports 80 et 443 disponibles.
+- Une adresse IP statique avec les ports 80 et 443 disponibles. (ou utilisation d'un [DDNS](https://www.fortinet.com/fr/resources/cyberglossary/dynamic-dns){target="_blank"})
 - Un ordinateur pouvant servir de serveur.
 - Du temps.
 
@@ -33,6 +33,7 @@ Vous pouvez trouver un hello world pour un site html [ici.](https://www.educativ
 Pour effectuer cet auto-hébergement, on va y aller par étape :
     
 1. Mettre le site sur le réseau local.
+1. Mettre en place un [pare-feu ou firewall](firewall.md){target="_blank"}
 1. Mettre le site sur Internet en passant par l'adresse IP.
 1. Configurer un nom de domaine pour associer adresse IP et nom de domaine.
     
@@ -177,6 +178,8 @@ Si tout se passe bien, vous avez votre site en ligne.
 ## Ressources
 
 [code source du site](https://github.com/barrmath/piweb2){target="_blank"}
+
+[DDNS](https://www.fortinet.com/fr/resources/cyberglossary/dynamic-dns){target="_blank"}
 
 [hello world](https://www.educative.io/answers/how-to-write-hello-world-in-html){target="_blank"}
 

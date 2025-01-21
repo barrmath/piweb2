@@ -9,6 +9,7 @@ nav:
     - Gunicorn : reseaux/gunicorn.md
     - Proxy : reseaux/proxy.md
     - Certificat : reseaux/certificats.md
+    - Firewall : reseaux/firewall.md
     - Podman/Docker : reseaux/podman.md
     - Docker Compose : reseaux/docker-compose.md
     - Jenkins : reseaux/jenkins.md
