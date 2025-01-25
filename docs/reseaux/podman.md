@@ -133,6 +133,11 @@ Voici les commandes de base :
 
 Vous pouvez maintenant lancer vos containers et configurer un réseau entre eux pour que chaque container puisse communiquer avec les autres.
 
+En cas de besoin pour entrer dans un container en mode batch + accès root.
+```shell
+podman exec -it -u root:root grafana /bin/bash
+```
+
 ## Les pods
 
 OK, c'est super, mais on ne va peut-être pas lancer chaque container à la main puis les connecter au réseau. 
