@@ -8,4 +8,4 @@ Vous trouverez dans le menu diverses techno data :
 
 [Graphique](graphique.md) : diverses façons de faire des graphes sous Python.
 
-[Tableaux de bord](dashboards.md) : Faire ses tableaux de bord accessible avec grafana en auto-hebergement
+[Dashboards](dashboards.md) : Faire ses tableaux de bord accessible avec grafana en auto-hebergement

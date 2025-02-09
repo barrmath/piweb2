@@ -25,7 +25,7 @@ nav:
     - SQL : data/sql.md
     - Pandas : data/pandas.md
     - Graphique : data/graphique.md
-    - Tableaux de bord : data/dashboards.md
+    - Dashboards: data/dashboards.md
   - A propos de moi: about.md
 theme:
   name: material

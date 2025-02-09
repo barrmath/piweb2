@@ -3,6 +3,9 @@
 Dans la partie graphique, j'ai fait une allusion à grafana pour générer des tableaux de bord.
 Voyons ensemble comment faire pour avoir son petit serveur grafana perso.
 
+!!! question
+    Pourquoi pas PowerBi ou Tableaux ? Une seule reponse, c'est pas libre. (Et oui, je suis un libriste).
+
 Pour ce faire, nous allons utiliser MariaDB(base de données SQL ) et Grafana.
 
 ## Podman et podman-compose
