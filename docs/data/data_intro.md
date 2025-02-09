@@ -7,3 +7,5 @@ Vous trouverez dans le menu diverses techno data :
 [Pandas](pandas.md) : Base de pandas
 
 [Graphique](graphique.md) : diverses façons de faire des graphes sous Python.
+
+[Tableaux de bord](dashboards.md) : Faire ses tableaux de bord accessible avec grafana en auto-hebergement
