@@ -251,3 +251,5 @@ Avec le [firewall](../reseaux/firewall.md){target="_blank"}, vous autorisez ou n
 Si le firewall est bien configuré seul ceux dont les adresse IP sont autorisé peuvent acceder au snapshot ou au lien externe.
 
 exemple : le lien suivant vous montre un snapshots sur le pi5 chez moi passant par nginx : [https://barrmath.ovh/grafana/dashboard/snapshot/PbWtzoZ56pmkhYnj8AqyQpYuhoKf2pFn](https://barrmath.ovh/grafana/dashboard/snapshot/PbWtzoZ56pmkhYnj8AqyQpYuhoKf2pFn){target="_blank"}
+
+D'autre infos sur grafana avec un exemple : [ETL + grafana](etl_dashboards.md){target="_blank"}
