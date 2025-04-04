@@ -1,5 +1,8 @@
 # Django
 
+!!! warning
+    En construction, non relu, faites pas attention aux fautes.
+
 Pour un aperçu (non-exhaustif) des différents modules de [Flask](flask.md){target="_blank"}
 
 C'est une page qui va être faite en mode agile en parallèle d'un projet que je fais.
@@ -79,6 +82,76 @@ Youpi, django est installé.
 
 ## première application
 
+Terminal :
+
 ```
 python manage.py startapp login
 ```
+
+Va créer une application login et un dossier login.
+Votre dossier devrait ressembler à ça :
+
+```bash
+├── db.sqlite3
+├── GMAO
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   ├── settings.cpython-313.pyc
+│   │   ├── urls.cpython-313.pyc
+│   │   └── wsgi.cpython-313.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── login
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+└── manage.py
+```
+
+Modifions le fichier views.py dans login.
+
+``` py title="views.py"
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the login.")
+```
+
+On crée un fichier urls.py dans le dossier login.
+
+``` py title="login/urls.py"
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path("", views.index, name="index"),
+]
+```
+
+On configure django pour servir l'app avec son urls.py
+
+```py title="GMAO/urls.py" hl_lines="7"
+from django.contrib import admin
+from django.urls import include, path
+
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("login/", include("login.urls")),
+]
+```
+Maintenant on peux aller sur :
+
+[http://127.0.0.1:5000/login/](http://127.0.0.1:5000/login/){target="_blank"}
+
+On a un hello world de notre premiere appli.
