@@ -20,6 +20,7 @@ nav:
     - Python : programmation/python.md
     - Flask : programmation/flask.md
     - Jinja : programmation/jinja.md
+    - Django : programmation/django.md
   - Data : 
     - data/data_intro.md
     - SQL : data/sql.md
@@ -29,6 +30,9 @@ nav:
     - ETL : data/etl.md
     - Exemple d'utilisation ETL et dashboards avec des données de la FAO : data/etl_dashboards.md
   - A propos de moi: about.md
+  - Blog : blog/index.md
+plugins:
+  - blog
 theme:
   name: material
   custom_dir: overrides

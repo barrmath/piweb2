@@ -11,3 +11,5 @@ Vous trouverez dans le menu :
 [FLASK](flask.md) : Framework python pour le web
 
 [Jinja](jinja.md) : Générateur de page HTML
+
+[Django](django.md) : Un autre framework python pour le web
