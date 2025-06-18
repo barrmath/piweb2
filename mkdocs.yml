@@ -13,6 +13,7 @@ nav:
     - Podman/Docker : reseaux/podman.md
     - Docker Compose : reseaux/docker-compose.md
     - Jenkins : reseaux/jenkins.md
+    - Acces bureau à distance : reseaux/hoptodesk.md
   - Programmation: 
     - programmation/programmation_intro.md
     - Git : programmation/git.md

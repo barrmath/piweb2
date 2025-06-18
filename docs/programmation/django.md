@@ -5,7 +5,7 @@
 
 Pour un aperçu (non-exhaustif) des différents modules de [Flask](flask.md){target="_blank"}
 
-C'est une page qui va être faite en mode agile en parallèle d'un projet que je fais.
+C'est une page qui va être faite en mode agile en parallèle d'un projet que je fais. (GMAO, libre)
 
 ## Installation
 
@@ -79,6 +79,8 @@ Allons sur 127.0.0.1:5000.
 ![hello world django](django/hello_django.png)
 
 Youpi, django est installé.
+
+Ce dossier vous permets de configurer django et les app qui tournent dessus. (eventuellement les WSGI ensuite).
 
 ## première application
 
@@ -155,3 +157,9 @@ Maintenant on peux aller sur :
 [http://127.0.0.1:5000/login/](http://127.0.0.1:5000/login/){target="_blank"}
 
 On a un hello world de notre premiere appli.
+
+## Un peu de base de données
+
+Django est fourni avec une base de données (par default SQLlite).
+Si besoin vous pouvez modifer les variables dans /nomduprojet/settings.py pour en changer (par exemple mettre MariaDB ou Postgres)
+On verras plus tard lors d'une containerisation.
