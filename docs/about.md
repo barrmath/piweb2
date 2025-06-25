@@ -1,4 +1,4 @@
-<h1>A propos de moi</h1>
+# A propos de moi
 
 Passionnée d'informatique, je me reconvertis dans ce secteur.
 Vous trouverez sur ce site divers projets en cours ou fini.
