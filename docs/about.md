@@ -11,9 +11,3 @@ La partie réseaux est nécessaire pour partager ses données, il faut donc auss
 Pour information : Ce site est auto-hébergé sur un petit rasberry pi.
 
 Vous trouverez de plus amples informations dans les pages réseaux si cela vous intéresse.
-Vous pouvez me contacter par mail : 
-    <address>
-        <a href="mailto:%6da%74&#104;&#105;e&#117;%2e&#98;%61&#114;&#114;&#105;os&#64;o&#117;%74l&#111;&#111;k%2e%63%6f&#109;?
-        Subject=contact site internet barrmath.ovh&amp;body=Bonjour, je voudrais avoir plus d'informations au sujet de">
-        mathieu.barrios@outlook.com</a>
-    </address>

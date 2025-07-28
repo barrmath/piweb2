@@ -14,6 +14,7 @@ nav:
     - Docker Compose : reseaux/docker-compose.md
     - Jenkins : reseaux/jenkins.md
     - Acces bureau à distance : reseaux/hoptodesk.md
+    - DNS local : reseaux/DNS_local.md
   - Programmation: 
     - programmation/programmation_intro.md
     - Git : programmation/git.md
