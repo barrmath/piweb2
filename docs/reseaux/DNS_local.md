@@ -96,13 +96,13 @@ podman-compose up -d
 ```
 
 !!!tips
-   Un message d'erreur peut venir vous expliquant que vous n'avez pas accès au port 53 via podman.
-   Pas de panique, modifier le fichier /etc/sysctl.conf ajoutez à la fin du fichier : 
+    Un message d'erreur peut venir vous expliquant que vous n'avez pas accès au port 53 via podman.Pas de panique, modifier le fichier /etc/sysctl.conf ajoutez à la fin du fichier : 
     ```yaml
     # for pi-hole in podman-compose
     net.ipv4.ip_unprivileged_port_start=53
     ```
-    Cela permettra à podman de pouvoir modifier les ports 53 et au-dessus.
+
+Cela permettra à podman de pouvoir modifier les ports 53 et au-dessus.
 
 
 Un petit tour sur le service avec votre navigateur internet : adresse IP de votre pi et port. Par exemple 192.168.XXX.XXX:5080 ou le 5443 pour avoir un accès https.
