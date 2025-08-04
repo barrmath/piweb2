@@ -240,6 +240,56 @@ et cliquez sur **save and apply**
 !!!tips
     Votre raspberry a déjà une synchro horaire via un serveur. Vous pouvez desactiver les serveurs ntc en activant le menu expert en cliquant sur le bouton-slide "Basic".
 
+
+
+### Unbound seul.
+
+Installez le avec la commande 
+
+```bash
+sudo apt install unbound
+```
+
+Verifiez que unbound est bien acitf avec systemd :
+
+```bash
+sudo systemctl status unbound.service
+```
+Dans /etc/unbound/unbound.d/ ajoutez un fichier de configuration pour votre serveur local :
+
+```bash
+cd /etc/unbound/unbound.conf.d
+nano onlyunbound.conf
+```
+
+```yaml
+server:
+    # send minimal amount of information to upstream servers to enhance privacy
+    qname-minimisation: yes
+    # the interface that is used to connect to the network (this will listen to all interfaces    interface: 0.0.0.0
+    # interface: ::0
+    # addresses from the IP range that are allowed to connect to the resolver
+    access-control: 192.168.0.0/16 allow
+    # access-control: 2001:DB8/64 allow 
+    hide-identity: yes
+    hide-version: yes
+    
+remote-control:
+    # allows controling unbound using "unbound-control"
+    control-enable: yes
+```
+
+check de la config :
+```bash
+unbound-checkconf
+```
+
+Un petit systemd restart
+```bash
+sudo systemctl restart unbound
+```
+et unbound devrait être OK
+
 ### Exemple de config de la machin-box
 
 Vous avez un serveur DNS mais personne va dessus.
