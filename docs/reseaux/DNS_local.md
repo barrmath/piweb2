@@ -242,25 +242,27 @@ et cliquez sur **save and apply**
 
 
 
-### Unbound seul.
+### Utilisez seulement Unbound.
 
-Installez le avec la commande 
+Installez le avec la commande :
 
 ```bash
 sudo apt install unbound
 ```
 
-Verifiez que unbound est bien acitf avec systemd :
+Vérifiez que unbound est bien actif avec systemd :
 
 ```bash
 sudo systemctl status unbound.service
 ```
-Dans /etc/unbound/unbound.d/ ajoutez un fichier de configuration pour votre serveur local :
+Dans /etc/unbound/unbound.d/ , ajoutez un fichier de configuration pour votre serveur local :
 
 ```bash
 cd /etc/unbound/unbound.conf.d
 nano onlyunbound.conf
 ```
+
+Contenu de onlyunbound.conf :
 
 ```yaml
 server:
@@ -280,11 +282,13 @@ remote-control:
 ```
 
 check de la config :
+
 ```bash
 unbound-checkconf
 ```
 
 Un petit systemd restart
+
 ```bash
 sudo systemctl restart unbound
 ```
@@ -307,4 +311,12 @@ Exemple chez free :
 !!!tips
     Copier-coller le DNS d'origine en deuxième position, en cas de panne de votre serveur DNS vous aurez encore une accès internet
 
-Retournez sur l'interface de pi-hole, les requêtes devraient passer par celui-ci. (redémarrage des PC peut-être nécessaire)
+Retournez sur l'interface de pi-hole (Si installez), les requêtes devraient passer par celui-ci. (redémarrage des PC peut-être nécessaire).
+
+Sinon la commande
+
+```bash
+sudo unbound-control stats
+```
+
+devrait vous confirmer que vous passer par unbound pour vos requêtes. (Attention les stats se remettent à 0 à chaque demande).

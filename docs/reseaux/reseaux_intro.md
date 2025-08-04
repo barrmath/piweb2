@@ -17,3 +17,7 @@ Vous trouverez dans le menu mes projets réseaux :
 [Docker-compose](docker-compose.md) : orchestration des conteneurs
 
 [Jenkins](jenkins.md) : automatisation du deploiements
+
+[Accès bureau à distance](hoptodesk.md) : Configuration et installation de hoptodesk pour accès à distance
+
+[DNS local](DNS_local.md) : Configuration de Pi-hole et/ou unbound pour créer sont DNS local.
