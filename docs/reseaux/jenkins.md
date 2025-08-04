@@ -107,6 +107,9 @@ Pour ma part j'ai configuré les paramètres pour me connecté en SSH à mon ser
 
 Ensuite j'ai configurer le trigger (ou la gachette, la commande d'execution)
 
+!!!tips
+    Il faut aussi configurer un token pour l'utilisateur qui va utiliser le trigger (à ajouter dans son compte.)
+
 ![trigger configuration](jenkins/trigger.png)
 
 ensuite on passe au script
