@@ -115,7 +115,7 @@ Plus d'information sur les variables [ici.](https://grafana.com/docs/grafana/lat
 
 ## Résultats final
 
-Vous pouvez voir un tableaux grafana à cette adresse : [barrmath.ovh/grafana](https://barrmath.ovh/grafana){target="_blank"}
+Vous pouvez voir un tableaux grafana à cette adresse : [www.barrmath.ovh/grafana](https://www.barrmath.ovh/grafana){target="_blank"}
 
 login : viewer
 mot de passe : 1234
@@ -127,5 +127,5 @@ Cliquez sur **FAO** dans starred Dashboard.
 
 ![starred dashboard](etl_dashboards/connection.png)
 
-snapshot pour voir la non disponibilités des variables dans ce mode de partage: [https://barrmath.ovh/grafana/dashboard/snapshot/75vtpQTeJO86Cf1Zo8PbgO1OLDMbo94j](https://barrmath.ovh/grafana/dashboard/snapshot/75vtpQTeJO86Cf1Zo8PbgO1OLDMbo94j){target="_blank"}
+snapshot pour voir la non disponibilités des variables dans ce mode de partage: [https://www.barrmath.ovh/grafana/dashboard/snapshot/75vtpQTeJO86Cf1Zo8PbgO1OLDMbo94j](https://www.barrmath.ovh/grafana/dashboard/snapshot/75vtpQTeJO86Cf1Zo8PbgO1OLDMbo94j){target="_blank"}
 

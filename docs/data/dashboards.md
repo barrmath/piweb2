@@ -189,7 +189,7 @@ Plus haut, je vous ai parlé de grafana.env pour le docker/podman qui modifie la
 Il faut en configurer certaine. Alors au minimum :
 
 - GF_SERVER_ROOT_URL : chemin d'accès à votre grafana (par exemple https://mon_site/grafana)
-- GF_SERVER_SERVE_FROM_SUB_PATH : True si vous avez un subpath
+- GF_SERVER_SERVE_FROM_SUB_PATH : True si vous avez un subpath (Attention ligne à commenter, ce n'est plus valide avec les versions 10 et plus)
 
 Mais aussi d'autre pour plus de sécurité par exemple :
 
@@ -250,6 +250,6 @@ Avec le [firewall](../reseaux/firewall.md){target="_blank"}, vous autorisez ou n
 
 Si le firewall est bien configuré seul ceux dont les adresse IP sont autorisé peuvent acceder au snapshot ou au lien externe.
 
-exemple : le lien suivant vous montre un snapshots sur le pi5 chez moi passant par nginx : [https://barrmath.ovh/grafana/dashboard/snapshot/PbWtzoZ56pmkhYnj8AqyQpYuhoKf2pFn](https://barrmath.ovh/grafana/dashboard/snapshot/PbWtzoZ56pmkhYnj8AqyQpYuhoKf2pFn){target="_blank"}
+exemple : le lien suivant vous montre un snapshots sur le pi5 chez moi passant par nginx : [https://www.barrmath.ovh/grafana/dashboard/snapshot/PbWtzoZ56pmkhYnj8AqyQpYuhoKf2pFn](https://www.barrmath.ovh/grafana/dashboard/snapshot/PbWtzoZ56pmkhYnj8AqyQpYuhoKf2pFn){target="_blank"}
 
 D'autre infos sur grafana avec un exemple : [ETL + grafana](etl_dashboards.md){target="_blank"}
