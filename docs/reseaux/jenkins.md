@@ -142,3 +142,26 @@ Vous pouvez aussi utiliser ssh agent qui peut gerer certains credentials que vou
 Un dernier point, des plugins existent pour Jenkins pour lui ajouter des fonctions (par exemple sshagent qui permets de faire des commande ssh dans les scripts)
 Il faut être prudent avec ces plugins et les mettre à jour régulièrement.
 Ma politique est d'en utiliser le moins possible pour limiter les risques de sécurité.
+
+### meileure façon que les parametres :
+
+Ajoutez des credentials via le menu credentials puis utilisez les avec la pipeline.
+
+```yaml
+pipeline {
+  agent any
+
+  stages {
+        stage("build"){
+          steps {
+            echo "build"
+            withCredentials([string(credentialsId: 'sshport', variable: 'sshport'),string(credentialsID: 'parametresecret2', variable: 'secret2')]){
+              sh 'Truc -p $sshport -d $secret2 '
+              }
+          }
+        }
+  }
+}
+```
+!!!warning
+    Les script sh qui doivent utilisé des credential doivent utiliser les '' et nons les "" risque de sécurité
