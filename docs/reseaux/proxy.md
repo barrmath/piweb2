@@ -181,6 +181,73 @@ envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
 !!! tips
     Le export dollar="$" permet de garder le $ nécessaire dans les proxy_set_header
 
+### Nginx version aéré et routage.
+
+C'est bien beau, mais imaginer que vous avez besoin de plusieurs noms de domaines pour héberger plusieurs sites.
+Votre nginx.conf va devenir assez vite un joli bordel.
+
+Améliorons ça. Le but est de séparer les fichiers des différents sites/app web.
+
+Nginx.conf :
+```bash
+user user;
+worker_processes  1;
+error_log  /var/log/nginx/error.log;
+pid        /var/run/nginx.pid;
+events {
+        worker_connections  1024;
+    }
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    access_log  /var/log/nginx/access.log;
+    sendfile        on;
+    #tcp_nopush     on;
+    keepalive_timeout  5000;
+    # envoi moins d'information sur le serveur
+    server_tokens off;
+
+    # active la compression des pages sauf pour les navigateurs pourris
+    gzip  on;
+    gzip_comp_level 6;
+    gzip_proxied any;
+    gzip_vary on;
+    gzip_types  text/plain text/css application/x-javascript;
+    gzip_disable "MSIE [1-6]\.(?!.*SV1)";
+
+    include /etc/nginx/conf.d/*.conf; # pour séparer les configurations (Perso j'utilise pas)
+    include /etc/nginx/sites-enabled/*; # pour ajouter des sites web
+    }
+```
+
+Les fonction include vont inclure tous les fichiers présents dans les répertoires. 
+Par défaut, les nouvelles versions de Nginx incluent aussi un dossier /etc/nginx/sites-available/. Le but est de créer des [liens symboliques](https://www.hostinger.com/fr/tutoriels/comment-creer-un-lien-symbolique-sous-linux){target="_blank"} dans le dossier site enable pour activer ou non les sites internet.
+Perso je travaille directement avec un fichier dans sites-enabled (et vu ma proportion à travailler en essai erreur, je fais une copie du fichier qui marche enfin dans sites-available)
+
+Bref un exemple de fichier simple :
+
+```bash
+server {
+    server_name pouetpouet;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    ssl_certificate /etc/letsencrypt/live/pouetpouet/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/pouetouet/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    location / {
+        alias /home/tux/shared/hello/;
+        index index.html;
+        }
+    }
+```
+Et vous voyez certbot fait encore 50 % du boulot pour la certification en modifiant les fichiers de nginx.
+Alors pour info le server_name permet de selectionner les host (adresse http/nom de domaine/sousdomaine). En fonction du nom de domaine entré dans le navigateur, on utilise tel ou tel bloc serveur. 
+
+Je pourrais encore plus simplifier le fichier nginx.conf en sortant les configs de base (Gzip,timeout,etc) dans un ou plusieurs fichiers dans /etc/nginx/config
+Mais on est déjà pas mal.
 
 ### Alternative
 
