@@ -164,4 +164,4 @@ pipeline {
 }
 ```
 !!!warning
-    Les script sh qui doivent utilisé des credential doivent utiliser les '' et nons les "" risque de sécurité
+    Les scripts sh qui utilisent des credentials, doivent utiliser les simples '' et non les doubles "" Cause : risque de sécurité
