@@ -50,10 +50,11 @@ theme:
       toggle:
         icon: material/brightness-auto
         name: passer en mode clair
-
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: default 
+      scheme: default
+      primary: teal
+      accent: red
       toggle:
         icon: material/brightness-7
         name: Passer en mode sombre
@@ -61,6 +62,8 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: teal
+      accent: amber
       toggle:
         icon: material/brightness-4
         name: passer en mode par default du système
