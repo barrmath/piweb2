@@ -41,13 +41,18 @@ server {
 
     location / {
     # ligne à modifier pour mastodon
-    proxy_pass http://127.0.0.1:4080; # adresse localhost sur le port 4080 pour mastodon
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
+      proxy_pass http://127.0.0.1:4080; # adresse localhost sur le port 4080 pour mastodon
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
     }
-
+    location /system/ {
+      alias /home/tux/mastodon/public/system/;
+      expires max;
+      add_header Cache-Control public;
+      access_log off;    
+    }
 }
 ```
 
