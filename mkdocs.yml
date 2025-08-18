@@ -34,7 +34,9 @@ nav:
   - A propos de moi: about.md
   - Blog : blog/index.md
 plugins:
-  - blog
+  - blog:
+      blog_toc: true
+      post_readtime_words_per_minute: 250
   - search
 theme:
   name: material
