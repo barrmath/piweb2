@@ -32,6 +32,7 @@ nav:
     - ETL : data/etl.md
     - Exemple d'utilisation ETL et dashboards avec des données de la FAO : data/etl_dashboards.md
   - A propos de moi: about.md
+  - FORUM : https://forum.barrmath.ovh
   - Blog : blog/index.md
 plugins:
   - blog:
