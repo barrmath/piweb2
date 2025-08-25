@@ -17,3 +17,8 @@ Je voudrais avoir un truc qui permet de faire des échanges de manière légère
 Pour l'instant, je trouve que [Flarum](https://flarum.org/){target="_blank"} à l'air pas trop mal.
 Je teste pour l'instant en local (avec podman et des conteneurs).
 Je filerais bien sur les fichiers source (Dockerfile docker-compose et autre), ainsi que la méthode pour appliquer ça.
+
+MAJ du 25/08/2025: rajout d'un lien vers le forum. Il a l'air assez stable et ne mange pas trop de ressource.
+Je teste donc Flarum en selfhosting.
+
+Je verrait pour faire un article disant comment le mettre en place sur le site.
