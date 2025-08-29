@@ -4,6 +4,8 @@ Vous trouverez dans le menu mes projets réseaux :
 
 [Auto-hébergement](autohebergement.md) : Installation d'un serveur web sur un rasberry pi.
 
+[Forum](forum.md) : installation d'un forum
+
 [Monitoring](monitoring.md) : Mise en place d'une surveillance du serveur pi.
 
 [Gunicorn](gunicorn.md) : WSGI pour flask ou django

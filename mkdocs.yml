@@ -5,6 +5,7 @@ nav:
   - Réseaux:
     - reseaux/reseaux_intro.md
     - Auto-hébergement : reseaux/autohebergement.md
+    - Forum : reseaux/forum.md
     - Monitoring : reseaux/monitoring.md
     - Gunicorn : reseaux/gunicorn.md
     - Proxy : reseaux/proxy.md
