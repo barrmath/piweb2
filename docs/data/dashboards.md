@@ -13,6 +13,7 @@ Pour ce faire, nous allons utiliser MariaDB(base de données SQL ) et Grafana.
 Podman et podman-compose sont déjà décrit dans la [session réseaux.](../reseaux/podman.md).
 
 Nous allons donc créer un fichier docker-compose.yml :
+
 ```bash
 touch docker-compose.yml
 nano docker-compose.yml
@@ -84,7 +85,7 @@ podman-compose up -d
 Normalement, vous pouvez accéder à grafana sur l'adresse [127.0.0.1:4000](http://127.0.0.1:4000){target="_blank"} (sauf si vous avez mis [d'autres reglages](https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/){target="_blank"}).
 
 Entrez le mot de passe et commencez à utiliser grafana. (configuration de la connexion à la base de données par exemple.)
-!!! tips 
+!!! tips
     L'adresse de la base de données mariadb dans grafana est db:3306 . db étant le nom dans le DNS du réseau podman et 3306 est le port par défaut.
 
 ## Systemd pour automatiser le démarrage
@@ -155,14 +156,15 @@ Pour faire son tableau de bord, je vous renvoie dans la partie [monitoring](../r
 Il ne vous reste plus qu'à faire des requêtes à votre BDD et créer de beaux dashboards.
 
 !!! tips
-    Grafana par défaut met une limite aux 50 premiers résultats. Cliquez sur code puis supprimer la limite à la fin de la requête. 
+    Grafana par défaut met une limite aux 50 premiers résultats. Cliquez sur code puis supprimer la limite à la fin de la requête.
 
 ![bouton code grafana](dashboards/grafana_code1.png)
 
 ![Limite de 50 dans la requetes](dashboards/grafana_code2.png)
 
 ## Faire sortir son dashboard
-Pour faire sortir son dashboard, c'est facile. Il suffit de sortir du mode édition en cliquant sur **exit edit** en haut à gauche. 
+
+Pour faire sortir son dashboard, c'est facile. Il suffit de sortir du mode édition en cliquant sur **exit edit** en haut à gauche.
 
 ![bouton exit edit](dashboards/grafana_sortir_edit.png)
 
@@ -180,7 +182,7 @@ Vous pouvez configurer le partage (durée, Nom).
 
 Pour ce faire, on va passer va configurer nginx et grafana.
 
-## Connectez son grafana à internet.
+## Connectez son grafana à internet
 
 Alors premièrement, il vous faut un nom de domaine, un certificat SSL, grafana et nginx.
 
@@ -188,7 +190,7 @@ Plus haut, je vous ai parlé de grafana.env pour le docker/podman qui modifie la
 
 Il faut en configurer certaine. Alors au minimum :
 
-- GF_SERVER_ROOT_URL : chemin d'accès à votre grafana (par exemple https://mon_site/grafana)
+- GF_SERVER_ROOT_URL : chemin d'accès à votre grafana (par exemple [https://www.barrmath.ovh/grafana](https://www.barrmath.ovh/grafana){target="_blank"})
 - GF_SERVER_SERVE_FROM_SUB_PATH : True si vous avez un subpath (Attention ligne à commenter, ce n'est plus valide avec les versions 10 et plus)
 
 Mais aussi d'autre pour plus de sécurité par exemple :
@@ -245,7 +247,6 @@ Avec le [firewall](../reseaux/firewall.md){target="_blank"}, vous autorisez ou n
 
 !!! warning
     Cliquez bien sur **Publish snapshot**
-    
 ![bouton share](./dashboards/grafana_snapshots.png)
 
 Si le firewall est bien configuré seul ceux dont les adresse IP sont autorisé peuvent acceder au snapshot ou au lien externe.

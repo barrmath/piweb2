@@ -13,7 +13,7 @@ Matplotlib permet de faire des graphiques en python.Il y a deux méthode pour ut
 - la méthode script
 - la méthode Objet
 
-Les 2 méthodes sont bonnes, mais choisissez-en une. Les incompréhensions sont souvent dues à un mélange des méthodes. 
+Les 2 méthodes sont bonnes, mais choisissez-en une. Les incompréhensions sont souvent dues à un mélange des méthodes.
 
 ### La méthode script
 
@@ -28,7 +28,7 @@ plt.show()
 ```
 
 On va faire un script qui va construire le graphe. On reconnaît cette méthode avec l'utilisation quasi-exclusive des fonctions incluses dans matplotlib.
-C'est une méthode efficace et assez facile à prendre en main. 
+C'est une méthode efficace et assez facile à prendre en main.
 
 ### La méthode objet
 
@@ -45,7 +45,7 @@ plt.show()
 On crée les objets fig et ax qui vont permettre de faire le graphe.
 On applique ensuite les méthodes de l'objet ax ou fig pour construire le graphe.
 L'objet fig est la figure (la fenêtre pour vulgariser) qui va contenir le graphe. ax est l'objet graphe (axe).
-Personnellement, je préfère la méthode objet. Mais vous pouvez faire les mêmes choses en script. 
+Personnellement, je préfère la méthode objet. Mais vous pouvez faire les mêmes choses en script.
 
 ## Seaborn
 
@@ -81,20 +81,20 @@ plt.show()
 
 On construit donc un objet matplotlib, on l'injecte dans les fonctions seaborn et on peut ensuite utiliser les méthodes de matplotlib pour changer le graphe.
 
-Pourquoi utiliser seaborn alors ? Regardez bien la fonction , l'autre avantage de seaborn est qu'il est compatible avec pandas. 
-Vous pouvez donc envoyer une vue filtrée (ou non) de votre dataframe directement dans la fonction seaborn avec l'argument data, 
-les arguments x et y correspondent par exemple à 2 colonnes de votre dataframe.
+Pourquoi utiliser seaborn alors ? Regardez bien la fonction , l'autre avantage de seaborn est qu'il est compatible avec pandas.
+Vous pouvez donc envoyer une vue filtrée (ou non) de votre dataframe directement dans la fonction seaborn avec l'argument data,
+ les arguments x et y correspondent par exemple à 2 colonnes de votre dataframe.
 
 ## Conclusion
 
-Ces deux bibliothèques vous permettent de faire des graphiques en python. 
-Si vous voulez des graphiques, plus interactifs, il y a bokeh. 
+Ces deux bibliothèques vous permettent de faire des graphiques en python.
+Si vous voulez des graphiques, plus interactifs, il y a bokeh.
 Pour faire des tableaux de bord, orientez-vous vers des logiciels plus spécialisés comme :
 
 - [PowerBI](https://www.microsoft.com/fr-fr/power-platform/products/power-bi){target="_blank"}
 - [Tableau](https://tableau.com/){target="_blank"}
 - [Grafana](https://grafana.com/){target="_blank"} (qui fait du monitoring à la base, mais il est possible d'en faire un logiciel de datavisualisation)
- 
+
 ## Ressources
 
 [Matplotlib](https://matplotlib.org){target="_blank"}

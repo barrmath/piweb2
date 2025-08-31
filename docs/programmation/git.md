@@ -11,21 +11,21 @@ C'est un outil qui est transversal au niveau du projet.
 - Les chefs de projets peuvent surveiller l'avancement des projets.
 
 Pour faire simple Git est un indispensable dans le monde du développement actuel.
-Au niveau de l'installation de git, sous linux utilisez votre gestionnaire de paquets (souvent Git est déjà installé). 
+Au niveau de l'installation de git, sous linux utilisez votre gestionnaire de paquets (souvent Git est déjà installé).
 Pour les windosiens : [https://git-scm.com/downloads/win](https://git-scm.com/downloads/win){target="_blank"}
 
 ## Les repos Git local et "cloud"
 
 Le Terme Cloud, je l'utilise pour que les débutants comprennent le principe. Mais git utilise le terme remote.
 Vous avez en général 2 repos (ou repository ou en français dossier) le repos local ou vous travailler et le repos remote ou cloud qui est distant.
-Plusieurs services de remote existent : 
+Plusieurs services de remote existent :
 
 - [GitHub](https://github.com){target="_blank"}
 - [Gitlab](https://gitlab.com){target="_blank"}
 - [Bitbucket](https://bitbucket.org){target="_blank"}
 - [Framagit](https://framagit.org){target="_blank"}
 
-Donc le dossier comprenant votre projet est disponible sur votre machine, mais aussi sur votre remote. 
+Donc le dossier comprenant votre projet est disponible sur votre machine, mais aussi sur votre remote.
 On verra plus loin comment mettre à jour le remote.
 
 ## Les commits
@@ -39,7 +39,7 @@ Une fois le commit fait, un numéro de commit est attribué. Celà permet de rev
 Prenons directement un exemple pour expliquer les branches.
 Imaginons : Robert est administrateur, il s'occupe de la mise en production. Denis est un développeur qui s'occupe du développement du site.
 Pendant le développement, Denis travaille sur le site et fait des versions buguées et incomplètes du site.
-Vous comprenez assez facilement que Robert ne peut pas mettre en ligne une telle version. 
+Vous comprenez assez facilement que Robert ne peut pas mettre en ligne une telle version.
 Mais comment faire savoir à Robert ce qu'il peut mettre en production ou non ?
 
 1. On peut par exemple créer trois branches : production (ou main ou master) , test et dev.
@@ -54,7 +54,7 @@ Voyons maintenant comment mettre en place tout ça.
 ## Identification et authentification sur github
 
 Sur Gihub, les mots de passe ne permettent pas de se connecter en ligne de commande. On utilise donc sois un token sois un protocole ssh
-Les protocoles changeant souvent, je vous mets un lien vers la documentation officiel : 
+Les protocoles changeant souvent, je vous mets un lien vers la documentation officiel :
 
 - [Authentification par token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens){target="_blank"}
 - [Authentification par ssh](https://docs.github.com/en/authentication/connecting-to-github-with-ssh){target="_blank"}
@@ -64,10 +64,14 @@ Les protocoles changeant souvent, je vous mets un lien vers la documentation off
 ### git init
 
 Entrez dans votre dossier de projet sur votre disque local puis effectuer la commande.
-<pre><code class="bash">git init</code></pre>
+
+```bash
+git init
+```
+
 Cela va créer un repos git local dans votre dossier.
 Attention : je vois souvent des personnes faire un git init dans leur dossier personnel, voir même à la racine d'un disque.
-Il s'agit d'une erreur. Effacez le dossier .git créez par git pour annuler tout le suivi. 
+Il s'agit d'une erreur. Effacez le dossier .git créez par git pour annuler tout le suivi.
 Puis recommencez en faisant bien attention de lancer git init dans le bon dossier
 
 ### git config
@@ -85,11 +89,11 @@ Le fichier .sgit/config vous permet de configurer votre repos.
 
 ### git status
 
-Cette commande vous donne le statut de votre repos. Tout simplement. 
+Cette commande vous donne le statut de votre repos. Tout simplement.
 
 ### git add
 
-Permet d'ajouter un fichier ou un dossier à suivre dans votre repos. par exemple : 
+Permet d'ajouter un fichier ou un dossier à suivre dans votre repos. par exemple :
 
 ```shell
 git add  readme.md
@@ -120,7 +124,7 @@ Pour faire une branche nommée nom_de_la_branche
 
 ### git checkout
 
-Vous permet de changer de branche. 
+Vous permet de changer de branche.
 
 ```shell
 git checkout nom_de_la_branche
@@ -168,7 +172,6 @@ git clone https://github.com/username/repo.git
 
 Pour faire un clone de votre repos.
 
-
 ## La console Github
 
 Vous pouvez aussi utiliser la console Github. Pour gérer vos fichiers, vos branches et vos repos.
@@ -183,8 +186,8 @@ Je recommande de commencer votre projet avec la console Github pour les raisons 
 - Vous allez éviter de faire un git init n'importe où.
 - Vous n'aurez pas besoin de configurer le remote, il sera déjà prêt.
 
-Connectez-vous à github et mettez un nouveau nom de repos à votre github. 
-Cliquez sur private ou public si vous voulez un repos privé 
+Connectez-vous à github et mettez un nouveau nom de repos à votre github.
+Cliquez sur private ou public si vous voulez un repos privé
 (vous seul pouvez le voir et certains collègues autorisés) ou public (tout le monde peut le voir).
 
 ![git nez repos](git/New_repos.png)
@@ -223,11 +226,9 @@ Un dossier avec le nom du repos est créé sur votre disque local.
 Par défaut, vous êtes sur la branche main après un clone. Je vous conseille de changer de branche et voilà vous pouvez commencez à coder.
 Commencez par créer un ficher readme.md codée en markdown pour expliquer votre repos. Github l'affiche par défaut.
 
-
 ## .gitignore
 
-
-Encore un mot sur le fichier .gitignore . 
+Encore un mot sur le fichier .gitignore .
 Certains fichiers sont générés par votre code, ou vous ne voulez pas que certaines informations soient disponibles sur github
 Par exemple : vos identifiants ou vos clés
 Le fichier .gitignore vous permet d'ignorer les fichiers et dossiers qui ne vous intéressent pas.

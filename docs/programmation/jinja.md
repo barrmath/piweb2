@@ -8,7 +8,6 @@ Exemple : faire une page de base qui se répète dans tout le site (les menus, l
 
 ## Réutiliser du code html
 
-
 Alors Jinja2 possède des balises un peu comme html :
 
 - Les balises &#123;&#123; truc &#125;&#125; : permettent d'accéder à un objet
@@ -18,7 +17,7 @@ Dans la page [Flask](flask.md){target="_blank"}, on a déjà vu comment répliqu
 Pour rappel :
 Exemple de fichier de base :
 
-```html
+```jinja
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -30,7 +29,7 @@ Exemple de fichier de base :
 
 Fichier qui utilise la base :
 
-```html
+```jinja
 {% extends 'base.html' %}
 
 {%block content %}
@@ -49,7 +48,7 @@ Vous aurez besoin d'utiliser des objets dans les templates. Voyons voir comment 
 Vous connaissez les variables en python ? Oui, cela tombe bien Jinja2 utilise plus ou moins les mêmes.
 Déclaration de variables :
 
-```html
+```jinja
 {% set testing = 'it worked' %}
 {% set another = testing %}
 ```
@@ -67,7 +66,6 @@ Même des [dataframes](https://datacorner.fr/jinja-amis-des-pandas/{target="_bla
 Les methodes des objets fonctionnnent globalement de la même manière sur jinja2. Pensez juste aux accolades.
 
 !!! warning
-
     Attention les interactions sous jinja influence votre code python
 
 Vous pourriez avoir des surprises avec les méthodes pop par exemple qui supprime des objets des listes.
@@ -76,20 +74,22 @@ Vous pourriez avoir des surprises avec les méthodes pop par exemple qui supprim
 
 Vous pouvez vouloir afficher ou non un objet en fonction d'une variable. (souvent utiliser pour les logins pour afficher le bouton se connecter ou se déconnecter par exemple).
 Il suffit tout simplement d'utiliser la commande if :
-<pre><code class="HTML">&#123;% if truc == "machin" %&#125;
+
+```jinja
+{% if truc == "machin" %}
     Il y a machin dans truc
-&#123;% elif truc == "bidule" %&#125;
+{% elif truc == "bidule" %}
     Le truc c est un bidule en fait
-&#123;% else %&#125;
+{% else %}
     Le truc est un chimilibilil blick 
-&#123;% endif %&#125;
-</code></pre>
+{% endif %}
+```
 
 ### Les boucles for
 
 Vous envoyez des listes ou des tuples dans Jinja2, c'est bien pour les utiliser. En python, on va utiliser la boucle for dans ce cas-là. En jinja2 aussi.
 
-```html
+```jinja
 {% for row in rows %}
     {{ row }}
 {% endfor %}
@@ -97,7 +97,7 @@ Vous envoyez des listes ou des tuples dans Jinja2, c'est bien pour les utiliser.
 
 Vous pouvez aussi mettre une condition directement dans la boucle par exemple si les utilisateurs veulent être cachés :
 
-```html
+```jinja
 {% for user in users if not user.hidden %}
     {{ user.username }}
 {% endfor %}

@@ -1,4 +1,4 @@
-<h1>Data</h1>
+# Data
 
 Vous trouverez dans le menu diverses techno data :
 

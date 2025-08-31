@@ -1,6 +1,7 @@
 # ETL
 
 ## Intro
+
 Pandas et python sont bien, mais quelquefois un logiciel qui vous évite des lignes de codes, c'est mieux. Parlons des ETL. Un ETL va charger les données, les transformer et les charger vers une autre source.
 
 Par exemple, voulez sur un site internet avoir un accès à des KPI (Key Performance Indicators ou traduction : chiffre clé) Homme/Femme. Vous n'allez pas mettre les données de toute la RH sur le site (RGPD). Vous allez vouloir compiler directement les KPI puis mettre à jour la base de données. (en vous assurant que les données soient le plus anonyme possible)

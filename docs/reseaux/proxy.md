@@ -9,12 +9,11 @@ Par exemple :
 - En vous connectant à un proxy vous pouvez contourner les filtrages (un proxy est un intermédiaire, pensez aux pub de VPN sur youtube)
 - Surveillez les communcations entre plusieurs apareils, et créer des logs en cas d'obligation
 
-
 Mon VPN est un proxy alors ?
 Vous vous connectez bien à un intermédaire pour pouvoir accéder à des sites web. Donc selon la définition, oui.
 Le VPN (Virtual Private Network) est surtout le moyen de vous connecter á un proxy.
 Par exemple vous pouvez un tunnel VPN avec votre [Freebox.](https://www.actusfree.fr/vpn-freebox/){target="_blank"}
-Vous pouvez accéder à vos ordinateurs de manière sécuriser. Installez un proxy qui vous donne renvoie le site internet voulu. 
+Vous pouvez accéder à vos ordinateurs de manière sécuriser. Installez un proxy qui vous donne renvoie le site internet voulu.
 Voila vous venez de créer un VPN comme dans la pub (sauf que vous pouvez pas changer de pays sauf si vous installer plein de freebox partout)
 Dans le cas suivant je vais vous montrer comment utiliser un proxy en utilisant [nginx](https://nginx.org/en/){target="_blank"}
 Donc maintenant si vous bien compris :
@@ -27,8 +26,8 @@ Mes excuses pour cette petite disgression.
 
 ## nginx
 
-NGINX Open Source2 ou NGINX (également orthographié Nginx ou nginx) est un logiciel libre de serveur Web (ou HTTP) 
-ainsi qu'un proxy inverse écrit par Igor Sysoev, dont le développement a débuté en 2002 pour les besoins d'un site russe 
+NGINX Open Source2 ou NGINX (également orthographié Nginx ou nginx) est un logiciel libre de serveur Web (ou HTTP)
+ainsi qu'un proxy inverse écrit par Igor Sysoev, dont le développement a débuté en 2002 pour les besoins d'un site russe
 à très fort trafic (Rambler). Source [wikipedia](https://fr.wikipedia.org/wiki/NGINX){target="_blank"}
 
 Nginx va servir d'intermediaire entre Gunicorn et Internet.
@@ -40,7 +39,7 @@ Nginx va servir d'intermediaire entre Gunicorn et Internet.
 ### Installation et Configuration
 
 Sous linux installation par gestionnaire de paquets (apt-get install nginx), image docker
-Sous windows et mac l installateur se trouve dans la session 
+Sous windows et mac l installateur se trouve dans la session
 [téléchargement du site nginx.org](https://nginx.org/en/download.html){target="_blank"}
 
 La configuration se fait dans le fichier /etc/nginx/nginx.conf
@@ -118,7 +117,6 @@ user tux;
 ```
 
 !!! tips
-
     La fonction envsubst peut vous permettre de modifier vos fichier conf dans des containeurs de votre nginx.conf. Il suffit de faire un template.
 
 exemple:
@@ -181,7 +179,7 @@ envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
 !!! tips
     Le export dollar="$" permet de garder le $ nécessaire dans les proxy_set_header
 
-### Nginx version aéré et routage.
+### Nginx version aéré et routage
 
 C'est bien beau, mais imaginer que vous avez besoin de plusieurs noms de domaines pour héberger plusieurs sites.
 Votre nginx.conf va devenir assez vite un joli bordel.
@@ -189,6 +187,7 @@ Votre nginx.conf va devenir assez vite un joli bordel.
 Améliorons ça. Le but est de séparer les fichiers des différents sites/app web.
 
 Nginx.conf :
+
 ```bash
 user user;
 worker_processes  1;
@@ -221,7 +220,7 @@ http {
     }
 ```
 
-Les fonction include vont inclure tous les fichiers présents dans les répertoires. 
+Les fonction include vont inclure tous les fichiers présents dans les répertoires.
 Par défaut, les nouvelles versions de Nginx incluent aussi un dossier /etc/nginx/sites-available/. Le but est de créer des [liens symboliques](https://www.hostinger.com/fr/tutoriels/comment-creer-un-lien-symbolique-sous-linux){target="_blank"} dans le dossier site enable pour activer ou non les sites internet.
 Perso je travaille directement avec un fichier dans sites-enabled (et vu ma proportion à travailler en essai erreur, je fais une copie du fichier qui marche enfin dans sites-available)
 
@@ -243,8 +242,9 @@ server {
         }
     }
 ```
+
 Et vous voyez certbot fait encore 50 % du boulot pour la certification en modifiant les fichiers de nginx.
-Alors pour info le server_name permet de selectionner les host (adresse http/nom de domaine/sousdomaine). En fonction du nom de domaine entré dans le navigateur, on utilise tel ou tel bloc serveur. 
+Alors pour info le server_name permet de selectionner les host (adresse http/nom de domaine/sousdomaine). En fonction du nom de domaine entré dans le navigateur, on utilise tel ou tel bloc serveur.
 
 Je pourrais encore plus simplifier le fichier nginx.conf en sortant les configs de base (Gzip,timeout,etc) dans un ou plusieurs fichiers dans /etc/nginx/config
 Mais on est déjà pas mal.
@@ -257,7 +257,7 @@ Suite au [rachat de Nginx par F5 Network](https://www.lemagit.fr/actualites/2524
 - [angie](https://en.angie.software/){target="_blank"} un fork du créateur original sous tutel de Angie sofware Société russe
 
 Vous pouvez utiliser d'autre service comme [Apache httpd](https://httpd.apache.org/){target="_blank"}
-ou [microsoft ISS](https://learn.microsoft.com/fr-fr/iis/get-started/introduction-to-iis/iis-web-server-overview){target="_blank"} 
+ou [microsoft ISS](https://learn.microsoft.com/fr-fr/iis/get-started/introduction-to-iis/iis-web-server-overview){target="_blank"}
 
 ## Ressources
 

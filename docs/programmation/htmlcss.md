@@ -11,17 +11,14 @@ Je vais donner plusieurs raisons :
 
 Commençons par le commencement le html puis ensuite le CSS.
 
-## HTML
-
 Premièrement pour apprendre à faire des pages internet en pur HTML CSS vous avez besoin d'un navigateur internet et d'un éditeur de texte.
 N'ouvrez pas word ou autre suite bureautique, il nous faut du texte sans fioriture.
-Pour les navigateurs internet, je recommande [Firefox](https://www.mozilla.org/fr/firefox/new/){target="_blank"} 
+Pour les navigateurs internet, je recommande [Firefox](https://www.mozilla.org/fr/firefox/new/){target="_blank"}
 et le [firefox pour développeur](https://www.mozilla.org/fr/firefox/developer/){target="_blank"} pour aller plus loin.
 Pour les éditeurs de texte :
 
 - Éditeur simple : [notepad++](ttps://notepad-plus-plus.org/downloads/){target="_blank"}
 - Éditeur pour développeur : [vscodium](ttps://vscodium.com/){target="_blank"}
-
 
 Ouvrez un éditeur de code, copier/coller le code en dessous et sauvegarder avec une extension .html.
 
@@ -95,9 +92,11 @@ Si vous avez plusieurs balises mais que vous ne voulez pas avoir le même compor
 
 Ajouter class="nom" (si vous avez plusieurs balises à modifier) ou id="nom"(pour une seule balise)
 Par exemple :
+
 ```html
 <div class=nom_de_classe>blablabla</div>
 ```
+
 et la partie CSS suivante :
 
 ```css

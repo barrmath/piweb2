@@ -2,7 +2,6 @@
 
 ## Rappel adresse IP et port
 
-
 Vulgarisons.
 Une adresse IP est une adresse pour reconnaître un ordinateur.
 Les ports sont comme des portes. Une adresse IPV4 est souvent protégée par un Nat, qui a souvent un pare-feu.
@@ -17,7 +16,7 @@ Pour plus de détail :
 ## Principe
 
 Prenons votre adresse postale : 3 rue bidule 99999 Vilage-sur-mer, c'est votre adresse IP.
-Et tout ce qui peut faire entrer ou sortir des trucs de votre maison est un port. 
+Et tout ce qui peut faire entrer ou sortir des trucs de votre maison est un port.
 
 Votre porte d'entrée est donc un port. Vous contrôlez qui rentre chez vous ou non. La nuit, vous fermez la porte, car vous voulez que personne n'entre la nuit.
 
@@ -28,7 +27,7 @@ Un firewall permet de contrôler ce qui rentre ou sort de votre ordinateur.
 ## Logiciel/matériel
 
 Un firewall peut-être installé comme un logiciel ([pfense](https://www.pfsense.org/){"target=_blank"},
- [iptable](https://fr.wikipedia.org/wiki/Iptables){"target=_blank"}, 
+ [iptable](https://fr.wikipedia.org/wiki/Iptables){"target=_blank"},
  [ufw](https://wiki.ubuntu.com/UncomplicatedFirewall?action=show&redirect=UbuntuFirewall){"target=_blank"}) ou
  comme un matériel (inclus dans un [routeur par exemple](https://www.fs.com/fr/blog/network-switch-vs-network-router-vs-network-firewall-8403.html){target="_blank"})
 
@@ -67,6 +66,7 @@ sudo apt install ufw
 ufw version
 ufw help
 ```
+
 Affiche la version et l'aide.
 
 ### Mettre en place les régles
@@ -74,27 +74,31 @@ Affiche la version et l'aide.
 ```shell
 sudo ufw allow 850
 ```
+
 Ouvre le port 850
 
 ```shell
 sudo ufw allow 25/tcp
 ```
-Ouvre le port 25 en tcp uniquement
 
+Ouvre le port 25 en tcp uniquement
 
 ```shell
 sudo ufw allow out 2685/udp
 ```
+
 Ouvre le port 2685 en sortie et en udp uniquement.
 
 ```shell
 sudo ufw insert 1 deny from [ip]
 ```
+
 Bloquez une IP sur tous les ports. Le **insert 1** met cette règle en premier. Obligatoire pour faire passer les deny en priorité.
 
 ```shell
 sudo ufw allow from 15.15.15.15 to any port 22
 ```
+
 Autoriser le port 22 uniquement à 15.15.15.15
 
 ### Verifier les régles
@@ -102,11 +106,13 @@ Autoriser le port 22 uniquement à 15.15.15.15
 ```shell
 sudo ufw status
 ```
+
 Affiche les règles. Un petit (V6) apparait pour les règles ipV6. Sans indication, c'est une règle IPV4.
 
 ```shell
 sudo ufw status numbered
 ```
+
 Affiche les règles avec un numéro.
 
 ### Enlevez des régles
@@ -114,31 +120,32 @@ Affiche les règles avec un numéro.
 ```shell
 sudo ufw delete allow 80
 ```
+
 Supprime la règle qui ouvre le port 80.
 
 ```shell
 sudo ifw delete 8
 ```
-Suprimme la règle numéro 8 (afficher sur status numbered)
 
+Suprimme la règle numéro 8 (afficher sur status numbered)
 
 ### Démarrer le pare-feu
 
 !!!warning
     Vous n'avez pas oublié ssh hein ?
 
-
 ```shell
 sudo ufw enable
 ```
-Démarre le pare-feu. Un message vous prevenant que cela risque de bloquer ssh apparait. Dite oui (enfin yes).
 
+Démarre le pare-feu. Un message vous prevenant que cela risque de bloquer ssh apparait. Dite oui (enfin yes).
 
 ### Éteindre le pare-feu
 
 ```shell
 sudo ufw disable
 ```
+
 Éteint le pare-feu.
 
 !!!tips

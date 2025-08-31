@@ -10,6 +10,7 @@ Alors le but est d'avoir une image Docker et un docker-compose qui les lances.
 Flarum ne fournit pas d'image. On va devoir en créer une.
 
 dockerfile:
+
 ```yaml
 FROM debian:latest
 
@@ -49,6 +50,7 @@ CMD sh config.sh
 Dans cette image, vous avez nginx, php et flarum. Elle a besoin de 3 fichiers : un fichier config.sh un fichier config.php.template qui contient la config de Flarum et default.conf.template pour nginx.
 
 config.sh:
+
 ```bash
 export DOLLAR="$" #permet de tricher avec pour envsubt
 rm /etc/nginx/sites-enabled/default
@@ -58,6 +60,7 @@ service php8.4-fpm start && nginx -g "daemon off;"
 ```
 
 default.conf.template:
+
 ```yaml
 server {
     listen 80;
@@ -86,6 +89,7 @@ server {
 ```
 
 config.php.template :
+
 ```php
 <?php return array (
   'debug' => false,
@@ -154,6 +158,7 @@ services:
 Les variables d'environnement
 
 .env:
+
 ```bash
 MYSQL_ROOT_PASSWORD=mot_de_passe_super_compliqué_admin
 MYSQL_DATABASE=flarum
@@ -163,10 +168,12 @@ DBHOST=flarum-db
 DOMAIN=localhost:8080
 PROTOCOL=http://
 ```
+
 Pensez à changer les mots de passe, mysql_user le protocol et le domaine.
 
 Premiere exexcution :
-```
+
+```bash
 podman build -t flarum .
 podman-compose -up -d
 ```
@@ -189,15 +196,17 @@ service php8.4-fpm start && nginx -g "daemon off;"
 
 Reconstruire l'image puis éteindre et relancer le forum :
 
-```bash
+```zsh
 podman build -t flarum .
 podman-compose down
 podman-compose up -d
 ```
 
 Faire un service systemd, en cas de redémarrage forcé du serveur :
+
 etc/systemd/system/flarum.service :
-```
+
+```systemd
 [Unit]
 Description=redemarre Flarum
 After=network.target
@@ -215,6 +224,6 @@ WantedBy=multi-user.target
 
 puis activez le service :
 
-```bash
+```zsh
 sudo systemctl enable flarum.service
 ```

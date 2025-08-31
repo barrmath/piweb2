@@ -1,6 +1,6 @@
 # Dashboard et ETL exemple les données de la FAO
 
-## La FAO et ces données.
+## La FAO et ces données
 
 La [FAO](https://www.fao.org/home/fr){target="_blank"} est une organisation des Nations Unis ayant pour but d'en finir avec la faim dans le monde.
 
@@ -9,7 +9,6 @@ Elle donne accès à [différentes données](https://www.fao.org/faostat/fr/#dat
 Le but ici est d'avoir des cartes mondiales et de pouvoir suivre l'évolution d'un pays vers une autonomie alimentaire.
 
 Pour cela, j'utilise la disponibilité alimentaire, et les productions du pays.
-
 
 ## Infrastructure
 
@@ -22,7 +21,7 @@ Je le fais avec 2 Containeurs :
 
 Pour cela j'utilise podman avec ce depot : [https://github.com/barrmath/piweb2-grafana](https://github.com/barrmath/piweb2-grafana){target="_blank"}
 
-Rappel : 
+Rappel :
 
 - [utilisation de Git](../programmation/git.md){target="_blank"}
 - [utilisation de docker-compose](../reseaux/docker-compose.md){target="_blank"}
@@ -34,7 +33,7 @@ Les fichiers ont eu différents traitements :
 
 ![Premier pipeline](etl/knime_pipelibe.png)
 
-Fichier disponibilité alimentaire et production : 
+Fichier disponibilité alimentaire et production :
 
 - Filtrer des lignes pour n'avoir que les informations nécessaire.
 - enlever des colonnes
@@ -72,7 +71,6 @@ Donc mise à jour du traitement de données :
 
 On utilise la colonne code M49. Les fichiers ayant certains défauts, j'ai dû modifier le M49 code dans le pipeline (2 devient 002 par exemple). Les 2 fichiers subissent différents traitements. (filtrage de ligne renommage de colonne etc.) Et ils sont ensuite transférés dans la BDD.
 
-
 ## Affichage des données 2
 
 On recommence avec grafana, résultat avec la colonne des noms à 3 lettres :
@@ -102,7 +100,7 @@ Félicitations, vous avez créé votre première variable.
 
 Pour l'utiliser, il suffit d'utiliser le symbole du dollar $.
 
-par exemple : 
+par exemple :
 
 Dans un titre : **Disponibilité alimentaire dans le monde en $Annee**
 Dans une requete :SELECT * FROM FAO.dispo_alimentaire WHERE `Année` = $Annee
@@ -128,4 +126,3 @@ Cliquez sur **FAO** dans starred Dashboard.
 ![starred dashboard](etl_dashboards/connection.png)
 
 snapshot pour voir la non disponibilités des variables dans ce mode de partage: [https://www.barrmath.ovh/grafana/dashboard/snapshot/75vtpQTeJO86Cf1Zo8PbgO1OLDMbo94j](https://www.barrmath.ovh/grafana/dashboard/snapshot/75vtpQTeJO86Cf1Zo8PbgO1OLDMbo94j){target="_blank"}
-

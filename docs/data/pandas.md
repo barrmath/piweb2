@@ -1,11 +1,11 @@
 # Pandas
 
-Quand on parle de la bibliothèque [pandas](https://pandas.pydata.org/){target="_blank"} on parle surtout de son objet le Dataframe. 
+Quand on parle de la bibliothèque [pandas](https://pandas.pydata.org/){target="_blank"} on parle surtout de son objet le Dataframe.
 Pour décrire cet objet, prenons une table de base de données. Elle a des colonnes et des valeurs.
-Imaginer maintenant mettre cette table en RAM, et pouvoir la manipuler avec python. 
+Imaginer maintenant mettre cette table en RAM, et pouvoir la manipuler avec python.
 Vous associez la simplicité de python, et la rapidité de la RAM. Voilà votre dataframe.
 Si vous êtes sur excel, vous pouvez automatiser certaines actions comme le nettoyage de données ou la création de graphiques.
-Mais aussi dépasser le million de lignes. 
+Mais aussi dépasser le million de lignes.
 
 ## Installation par pip
 
@@ -13,7 +13,7 @@ Mais aussi dépasser le million de lignes.
 pip install pandas
 ```
 
-Vous permet d'installer pandas avec pip. Il ne reste plus qu'à faire un import.    
+Vous permet d'installer pandas avec pip. Il ne reste plus qu'à faire un import.
 
 ```python
 import pandas as pd
@@ -23,10 +23,10 @@ Vous permet d'utiliser le namecode 'pd' au lieu de pandas, raccourci souvent uti
 
 ## Conseil et Source de donnée
 
-Si vous vous intéressez à pandas, vous allez très certainement déborder sur numpy, matplotlib, seaborn, ... . Je vous 
-conseille la distribution [anaconda](https://www.anaconda.com/download){target="_blank"}. 
-Elle contient ipython, les bibliothèques/modules principaux en data, 
-mais aussi jupyterlab qui permet de faire des notebooks, et pleins d'autres outils (spider, conda). 
+Si vous vous intéressez à pandas, vous allez très certainement déborder sur numpy, matplotlib, seaborn, ... . Je vous
+conseille la distribution [anaconda](https://www.anaconda.com/download){target="_blank"}.
+Elle contient ipython, les bibliothèques/modules principaux en data,
+mais aussi jupyterlab qui permet de faire des notebooks, et pleins d'autres outils (spider, conda).
 
 Au niveau des sources de données, je vous conseille des plateformes open-data comme par exemple :
 
@@ -49,7 +49,7 @@ Exemple :
 data = pd.read_csv("mon_fichier.csv")
 ```
 
-Vous permet de lire votre fichier csv et de le mettre dans un dataframe. Plus d'info dans la 
+Vous permet de lire votre fichier csv et de le mettre dans un dataframe. Plus d'info dans la
 [documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html){target="_blank"} de pandas
 
 ### Donnée sur BDD
@@ -59,7 +59,7 @@ Si vos données sont sur une base de données, il existe des connecteurs.
 #### Base de données SQL
 
 Vous pouvez utiliser directement des bases de données SQL avec les commandes incluses dans pandas.
-Plus d'info ici : 
+Plus d'info ici :
 [https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-sql](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-sql){target="_blank"}
 
 Certains préfèrent utiliser la bibliothèque sqlalchemy que vous trouverez là :
@@ -110,7 +110,7 @@ data[new]=data.colonne1+data['colonne2']
 
 ### Filtre
 
-Vous ne voulez que les enfants de moins de trois ans : data[data['age']&lt;3] . 
+Vous ne voulez que les enfants de moins de trois ans : data[data['age']&lt;3] .
 Décortiquons un peu le fonctionnement:
 
 ```python
@@ -127,7 +127,7 @@ data[data['age']&lt;3][['nom','prenom','classe']]
 
 Pour une introduction à pandas, c'est pas mal. Plus de fonction dans la documentation (loc, iloc pour le tri).
 
-Un dernier tip pour la route, pourchanger le type des colonnes, regarder la méthode 
+Un dernier tip pour la route, pourchanger le type des colonnes, regarder la méthode
 [astype](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.astype.html){target="_blank"}
 
 ## Sauvegarder votre Dataframe
@@ -137,14 +137,14 @@ La méthode data.to_csv("fichier.csv") permet de sauvegarder votre dataframe en 
 ## Premier graphique
 
 Juste pour information, vous pouvez utiliser pandas pour dessiner des graphiques avec la méthode plot.
-Je vous mets le lien vers la documentation de plot : 
+Je vous mets le lien vers la documentation de plot :
 [https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html){target="_blank}
 
 ## Conclusion
 
 Il s'agit juste d'une introduction. Vous pouvez trouver des utilisations de pandas dans mon
 [github](https://github.com/barrmath){target="_blank"}.
-Faites vos propres graphiques, essayer de chercher ce que vous pouvez faire avec les données ouvertes. C'est la meilleure façon d'apprendre. 
+Faites vos propres graphiques, essayer de chercher ce que vous pouvez faire avec les données ouvertes. C'est la meilleure façon d'apprendre.
 
 ## Ressources
 
@@ -159,4 +159,3 @@ Faites vos propres graphiques, essayer de chercher ce que vous pouvez faire avec
 [https://www.sqlalchemy.org/](https://www.sqlalchemy.org/){target="_blank"}
 
 [https://github.com/barrmath](https://github.com/barrmath){target="_blank"}
-

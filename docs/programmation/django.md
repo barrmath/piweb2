@@ -15,7 +15,7 @@ Pour un environnement virtuel :
 
 Version Linux dans un terminal :
 
-```
+```bash
 python -m venv venv
 source venv/bin/activate
 pip install django
@@ -25,16 +25,16 @@ Version Windows (Troll : je conseille d'installer Linux, mais faite ce que vous 
 
 Démarrez cmd ou powershell puis tapez :
 
-```
+```bash
 python -m venv venv
 venv/bin/activate.bat
 pip install django
 ```
 
 Personnellement, je crée un fichier requirements.txt et je note tous les paquets que j'installe un par un.
-Puis un 
+Puis un
 
-```
+```bash
 pip install -r requirements.txt 
 ```
 
@@ -42,7 +42,7 @@ me permet d'installer tous les paquets. (Des outils comme [poetry](https://pytho
 
 ## Démarrage d'un projet hello world
 
-Django par rapport à Flask est plus monolithique. Il a donc une approche plus stricte que Flask. 
+Django par rapport à Flask est plus monolithique. Il a donc une approche plus stricte que Flask.
 
 Il fonctionne obligatoire avec une base de données.
 
@@ -50,7 +50,7 @@ Le serveur de développement vous livre les fichiers statiques. Le serveur de pr
 
 Pour démarrer un projet django GMAO :
 
-```
+```bash
 django-admin startproject GMAO
 ```
 
@@ -70,11 +70,11 @@ Pour info : [les différences entre gunicorn et uvicorn](https://medium.com/@eze
 
 Lançons le serveur de dev grâce au script manage.py:
 
-```
+```bash
 python manage.py runserver 127.0.0.1:5000
 ```
 
-Allons sur 127.0.0.1:5000. 
+Allons sur 127.0.0.1:5000.
 
 ![hello world django](django/hello_django.png)
 
@@ -86,7 +86,7 @@ Ce dossier vous permets de configurer django et les app qui tournent dessus. (ev
 
 Terminal :
 
-```
+```bash
 python manage.py startapp login
 ```
 
@@ -152,6 +152,7 @@ urlpatterns = [
     path("login/", include("login.urls")),
 ]
 ```
+
 Maintenant on peux aller sur :
 
 [http://127.0.0.1:5000/login/](http://127.0.0.1:5000/login/){target="_blank"}

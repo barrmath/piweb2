@@ -2,6 +2,7 @@
 
 On a appris à faire des conteneurs. Mais souvent une application web ou autre nécessite plusieurs conteneurs.
 Par exemple :
+
 - Une base de données
 - Un serveur front-back
 C'est dans ce cas que l'on utilise les orchestrateurs de conteneurs.
@@ -50,14 +51,14 @@ Analysons un peu le code :
 
 - volumes : permets de créer des volumes qu'on garde sur le disque même si le conteneur est arrêté. Ça permet par exemple de garder les documents de la base de données.
 - services : on définie les conteneurs qui doivent tourner ensemble. On les nomme et on les définit.
-    - image : emplacement de l'image docker builder (construite)
-    - container_name: nom du conteneur
-    - restart: condition de redémarage du conteneur
-    - env_file : si vous utilisez un fichier avec des variables d'environnement
-    - networks : definie les reseaux accessible au conteneneur (voir plus bas)
+  - image : emplacement de l'image docker builder (construite)
+  - container_name: nom du conteneur
+  - restart: condition de redémarage du conteneur
+  - env_file : si vous utilisez un fichier avec des variables d'environnement
+  - networks : definie les reseaux accessible au conteneneur (voir plus bas)
 - network : détermine les reseaux entre les conteneurs
-    - nom-du-réseaux
-    - driver :  type de réseaux
+  - nom-du-réseaux
+  - driver :  type de réseaux
 
 Pour le type de réseaux en docker, ce sont les mêmes que pour les VM.
 Plus d'information su la [documentation officielle](https://docs.docker.com/compose/how-tos/networking/){target="_blank"}
@@ -66,7 +67,6 @@ Plus d'information su la [documentation officielle](https://docs.docker.com/comp
 
 !!! warning
     Pour Podman, installez le packet podman-compose et dans les dépendances optionnelles, vous trouverez souvent un paquet pour le dns rootless.
-
     Exemple : [aardvark-dns](https://github.com/containers/aardvark-dns){target="_blank"}
 
 Il faut d'abord avoir les bonnes images disponibles. N'oubliez pas de construire les images avant avec la commande :

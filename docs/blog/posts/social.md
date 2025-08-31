@@ -28,6 +28,7 @@ Commencez par avoir un site hello world en https avec certbot et nginx. (un simp
 Une fois le https fait avec certbot, on attaque la partie modification pour Mastodon.
 
 fichier /etc/nginx.conf ou fichier dans /etc/nginx/sites-enables ou etc/nginx/sites-available :
+
 ```yaml
 server {
     server_name votre_nom_de_domaine.Pouet;
@@ -143,11 +144,13 @@ networks:
     internal: true
 
 ```
+
 !!!tips
         Changez le mot de passe, nom et user de la base de données et le port du serveur web si besoin.
 
 Un gros fichier environnement doit être fourni:
 fichier .env
+
 ```yaml
 LOCAL_DOMAIN=votre_domaine
 SINGLE_USER_MODE=false
@@ -183,16 +186,18 @@ ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY=Clé_secrete
 ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT=Clé_secrete
 ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY=Clé_secrete
 ```
+
 !!!tips
         Pensez à recopier les valeurs de la db (mpd, nom ,etc) et mettre des clés secretes.
         La commande podman-compose run --rm web rails secret peut vous aider à générer des clés secretes.
-        Sinon vous pouvez utilisez un generateur de cle : https://www.tirage-au-sort.net/generateur-clef-aleatoire
+        Sinon vous pouvez utilisez un generateur de cle : [https://www.tirage-au-sort.net/generateur-clef-aleatoire](https://www.tirage-au-sort.net/generateur-clef-aleatoire){target="_blank"}
 
 Vous pouvez maintenant démarrer Mastodon :
 
 ```bash
 podman-compose up -d
 ```
+
 Mettez en place le site et la base de données :
 
 ```bash
@@ -214,6 +219,7 @@ Voilà vous n'avez plus qu'a faire venir des gens et faire de la modération/ani
 Ajoutez un service systemd pour redemarrer Mastodon en cas de reboot serveur :
 
 fichier /etc/systemd/system/mastodon.service
+
 ```yaml
 [Unit]
 Description=redemarre mastodon

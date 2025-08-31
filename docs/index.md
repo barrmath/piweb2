@@ -1,15 +1,14 @@
-Vous pouvez naviguer grâce à la navbar en haut.
+# Bienvenue sur mon site perso
 
 Ce site a plusieurs buts :
 Me faire apprendre par la pratique. (le but est de tout faire de A à Z).
-Présenter mes différentes compétences et me créer aussi un pense-bête. 
+Présenter mes différentes compétences et me créer aussi un pense-bête.
 
 Il y a 3 sujets principaux :
 
 - Le [réseau](reseaux/reseaux_intro.md)
 - La [programmation](programmation/programmation_intro.md)
 - La [data](data/data_intro.md)
-
 
 La partie réseau va vous présenter les bases du réseau et vous expliquer comment faire par exemple de l'auto-hébergement ou de l'hébergement cloud.
 La partie web vous informe sur les différentes technologies pour le partage web. (des simples pages html comme celle-ci aux applications).

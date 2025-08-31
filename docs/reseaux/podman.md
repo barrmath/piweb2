@@ -2,10 +2,10 @@
 
 ## C'est quoi Podman?
 
-[Podman](https://podman.io/){target="_blank"} permet de containeriser des applications. 
+[Podman](https://podman.io/){target="_blank"} permet de containeriser des applications.
 Un autre outil qui permet ça, c'est [Docker](https://www.docker.com){target="_blank"}.
 Et personnellement, j'utilise les deux.
-Mais c'est un peu court pour présenter les containers donc on va faire une sorte d'historique.    
+Mais c'est un peu court pour présenter les containers donc on va faire une sorte d'historique.
 
 ### Des PC, plein de PC
 
@@ -24,7 +24,7 @@ On installe des superviseurs (Vmware, VirtualBox, Promox, hyperV, ...) qui déco
 Une machine physique peut donc maintenant avoir plusieurs systémes d'exploitation, et un réseau avec plusieurs machines virtuelles.
 
 Les machines peuvent avoir la même configuration entre elles ou non.
-Les machines peuvent communiquer 
+Les machines peuvent communiquer
 grâce à des [réseaux virtuels](https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-virtualbox/){target="_blank"} au sein du serveur.
 
 ### Des conteneurs, plein de conteneurs
@@ -32,24 +32,24 @@ grâce à des [réseaux virtuels](https://www.it-connect.fr/comprendre-les-diffe
 Prochaine étape : les containers.
 
 Les Machines Virtuelles ne sont pas forcément toutes utilisées à 100 %, le découpage du serveur n'est peut-être pas idéal.
-À l'heure actuelle, 
+À l'heure actuelle,
 un bon compromis est d'utiliser un serveur avec un orchestrateur de containers. Par exemple sur le cloud. (aws,gcp,azure,informaniak,...)
-Vous pouvez configurer votre propre serveur de a à z, 
-ou utilisez un service directement configuré ( [cloud run chez GCP](https://cloud.google.com/run?hl=fr){target="_blank"}, 
+Vous pouvez configurer votre propre serveur de a à z,
+ou utilisez un service directement configuré ( [cloud run chez GCP](https://cloud.google.com/run?hl=fr){target="_blank"},
 [aws EKS](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/){target="_blank"} ).
 
-Les containers ont certaines limitations. 
-Votre container ne fonctionne qu'avec des applications Linux. 
+Les containers ont certaines limitations.
+Votre container ne fonctionne qu'avec des applications Linux.
 Lorsque vous utilisez podman ou docker sous mac ou windows vous utilisez un système Linux invité.
 
-Schématisons un peu imaginons un système avec une DB un front end et un back end avec un serveur et 3 VM et un autre système avec des containers : 
+Schématisons un peu imaginons un système avec une DB un front end et un back end avec un serveur et 3 VM et un autre système avec des containers :
 
 ![architecture serveur pour un site](podman/serveurs_site.png)
 
-Imaginons par exemple que la base de données grandie 
+Imaginons par exemple que la base de données grandie
 et dépasse les 50 Go. Avec les VM, on a un problème : plus d'espaces disques. Avec les containers, ça passe.
 
-Les ressources sont partagées entre les containers. 
+Les ressources sont partagées entre les containers.
 Mais attention tout de même si vous dépassez les ressource du serveur, vous perdez les données.
 
 Pour utiliser podman ou docker, il faut procéder par étapes :
@@ -134,13 +134,14 @@ Voici les commandes de base :
 Vous pouvez maintenant lancer vos containers et configurer un réseau entre eux pour que chaque container puisse communiquer avec les autres.
 
 En cas de besoin pour entrer dans un container en mode batch + accès root.
+
 ```shell
 podman exec -it -u root:root grafana /bin/bash
 ```
 
 ## Les pods
 
-OK, c'est super, mais on ne va peut-être pas lancer chaque container à la main puis les connecter au réseau. 
+OK, c'est super, mais on ne va peut-être pas lancer chaque container à la main puis les connecter au réseau.
 C'est long. On peut utiliser un script bash. Ça marche bien.
 
 On peut utiliser docker-compose (ou podman-compose) pour cela.

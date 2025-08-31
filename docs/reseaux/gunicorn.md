@@ -18,7 +18,7 @@ Press CTRL+C to quit
 ```
 
 Il faut un WSGI (Web Server Gateway Interface) qui va communiquer avec votre application python (Flask django ou autres).
-Il est souvent utilisé avec un proxy http ([nginx](https://www.nginx.org){target="_blank"}, ou 
+Il est souvent utilisé avec un proxy http ([nginx](https://www.nginx.org){target="_blank"}, ou
 [apache httpd](https://httpd.apache.org/docs/2.4/fr/programs/httpd.html){target="_blank"}).
 
 ![gunicorn](gunicorn/nginx_gunicorn.png#only-light)
@@ -28,9 +28,8 @@ Ainsi, vous pouvez utiliser Gunicorn comme un serveur de production.
 
 ## Installation
 
-
 Vous pouvez passer par votre gestionnaire de paquets sur Linux, ou bien par pip. Pour nos ami(e)s sous windows,
-vous pouvez utiliser pip install [waitress.](https://github.com/Pylons/waitress){target="_blank"} 
+vous pouvez utiliser pip install [waitress.](https://github.com/Pylons/waitress){target="_blank"}
 
 ```shell
 pip install gunicorn
@@ -38,15 +37,14 @@ pip install gunicorn
 
 ## Configuration et démarrage
 
-
-Pour lancer gunicorn, il suffit de taper la commande gunicorn avec votre app. 
+Pour lancer gunicorn, il suffit de taper la commande gunicorn avec votre app.
 Pour la configuration de l'app : nom_du_fichier:Nom_app ou nom_du_fichier:Appelle_fonction_creatrice() si vous êtes en app_factory.
 
 ```shell
 gunicorn web_app:app
 ```
 
-Vous pouvez aussi utiliser l'option -w pour indiquer le nombre de workers. (souvent nombre de thread dispo +1). 
+Vous pouvez aussi utiliser l'option -w pour indiquer le nombre de workers. (souvent nombre de thread dispo +1).
 Vous pouvez définir vos workers avec -k WORKERCLASS aussi pour par exemple avoir des fonctions asynchrones.
 
 ```shell

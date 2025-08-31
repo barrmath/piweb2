@@ -14,7 +14,6 @@ Pour le serveur, j'ai utilisé un Raspberry pi 5 avec Rasbian. Ma machin-box est
 ![Rasberry pi 5](autohebergement/23551-Raspberry-Pi-5-8G.jpg){width=200 align=left}
 ![FreeboxV8](autohebergement/Freebox_Pop_Server_V8.jpg){width=200}
 
-
 Alors pour commencer, il faut comprendre comment on obtient une page internet à partir d'une adresse internet. Je vous ai préparé le schéma suivant :
 ![schema internet](autohebergement/fonctionnement_internet.png#only-light){width=600}
 ![schema internet](autohebergement/fonctionnement_internet_dark.png#only-dark){width=600}
@@ -30,14 +29,14 @@ Vous pouvez trouver le code de ce site [ici.](https://github.com/barrmath/piweb2
 
 Vous pouvez trouver un hello world pour un site html [ici.](https://www.educative.io/answers/how-to-write-hello-world-in-html){target="_blank"}
 
-Pour effectuer cet auto-hébergement, on va y aller par étape :
-    
+Pour effectuer cet auto-hébergement, on va y aller par étape
+
 1. Mettre le site sur le réseau local.
 1. Mettre en place un [pare-feu ou firewall](firewall.md){target="_blank"}
 1. Mettre le site sur Internet en passant par l'adresse IP.
 1. Configurer un nom de domaine pour associer adresse IP et nom de domaine.
-    
-## Mettre le site sur le réseau local.
+
+## Mettre le site sur le réseau local
 
 J'utilise [Nginx](https://nginx.org/en/){target="_blank"} pour mettre en place mon site.
 En cas de soucis,vous pouvez trouver un tuto [ici.](http://nginx.org/en/docs/beginners_guide.html){target="_blank"}
@@ -49,6 +48,7 @@ apt-get install nginx
 ```
 
 modifier le fichier etc/nginx/nginc.conf pour qu'il envoie votre site.
+
 ```nginx
 http {
 # plein d'option par defaut;          
@@ -93,7 +93,9 @@ foo@bar: ip address
     inet6 XXXX:XXXX:XXXX:XXXX:XXXX:XXXX/XX scope link noprefixroute 
         valid_lft forever preferred_lft forever
 ```
+
 Pour les anciennes versions :
+
 ```shell
 foo@bar: ifconfig
     eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
@@ -110,12 +112,9 @@ Pour tester votre site en local, taper l'adresse IP et le port dans un navigateu
 
 ![hello local serveur](autohebergement/hello_local.png)
 
-
 Félicitation pour cette première étape.
 
-
-## Mettre le site sur Internet en passant par l'adresse IP.
-
+## Mettre le site sur Internet en passant par l'adresse IP
 
 Je considère que vous avez une adresse IP fullstack. Changer le port d'entrée si votre fournisseur vous interdit le port 80.
 
@@ -155,9 +154,7 @@ Ouvrir un navigateur pour tester avec l'adresse Ip indiquée puis le numero de p
 
 Votre site devrait s'afficher.
 
-
-## Configurer un nom de domaine pour associer adresse IP et nom de domaine.
-
+## Configurer un nom de domaine pour associer adresse IP et nom de domaine
 
 Pour les noms de domaine freebox gratuit avec un abonnement : cliquer sur nom de domaine -> ajouter un nom de domaine Freebox.
 Entrer le nom de domaine souhaité puis valider. Au bout de quelques minutes, votre nom de domaine devrait être actif. (et Free configure les DNS)

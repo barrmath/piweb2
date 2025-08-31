@@ -1,7 +1,12 @@
 # Flask
 
-[Flask](https://flask.palletsprojects.com/en/3.0.x/){target="_blank"} est un module python pour le web. 
+[Flask](https://flask.palletsprojects.com/en/3.0.x/){target="_blank"} est un module python pour le web.
 Il fait office de back-end (un peu comme [PHP](https://www.php.net/manual/fr/intro-whatis.php){target="_blank"}.
+Flask est un framework très modulaire. Pas de gestion de Base de données (possible avec [SQLalchemy](https://www.sqlalchemy.org/){target="blank"}).
+Si vous voulez des options, il faut en général installer un autre module.
+Il a une approche opposée à Django qui est clé en main.
+Les principaux avantages de Flask sont sa simplicité, et sa légèreté.
+Le principal défaut, il faut rechercher un module à chaque option ce qui alourdit le framework.
 Il existe d'autres modules pour faire du web, par exemple :
 
 - [Django](https://www.djangoproject.com/){target="_blank"}
@@ -9,24 +14,17 @@ Il existe d'autres modules pour faire du web, par exemple :
 
 Un petit descriptif pour chaque framework:
 
+## Description rapide des autres frameworks
+
 ### Django
 
-Django est un framework très complets (Base de données intégrée, divers outils d'administrations). 
+Django est un framework très complets (Base de données intégrée, divers outils d'administrations).
 Mais si vous n'avez pas besoin de tous ces services, il risque d'être un peu lourd.
-
-### Flask
-
-Flask est un framework très modulaire. Pas de gestion de Base de données (possible avec [SQLalchemy](https://www.sqlalchemy.org/){target="blank"}).
-Si vous voulez des options, il faut en général installer un autre module.
-Il a une approche opposée à Django qui est clé en main.
-Les principaux avantages de Flask sont sa simplicité, et sa légèreté.
-Le principal défaut, il faut rechercher un module à chaque option ce qui alourdit le framework.
 
 ### FastAPI
 
-Très ressemblant à Flask, il apporte des ajouts qui peuvent intéresser les développeurs. 
+Très ressemblant à Flask, il apporte des ajouts qui peuvent intéresser les développeurs.
 Un article les comparants se trouve [ici](https://www.pythoniste.fr/python/fastapi/les-differences-entre-les-frameworks-flask-et-fastapi/){target="_blank"}.
-
 
 ## Installation de l'environnement
 
@@ -36,14 +34,12 @@ pip install flask
 
 Il faudra peut être faire d'autres installations par la suite. Mais le simple flask suffit pour commencer.
 
-
 ## Utilisation
 
-
-Il y a deux utilisations type. Une première où vous créer une application. 
+Il y a deux utilisations type. Une première où vous créer une application.
 La deuxième ou vous créer une fonction qui fabrique l'application. (create factory).
 Les deux méthodes possèdent des qualités et des défauts. Globalement créer une app est plus simple qu'une fonction créatrice.
-La version create factory vous permet de créer plusieurs instances de votre application pour faire des tests et d'autres choses. 
+La version create factory vous permet de créer plusieurs instances de votre application pour faire des tests et d'autres choses.
 Plus d'information [ici](https://flask.palletsprojects.com/en/3.0.x/patterns/appfactories/){target="_blank"}.
 
 ### Arborescence
@@ -52,6 +48,7 @@ On peut tout mettre dans un seul fichier avec Flask.
 Mais disons simplement que c'est rapidement le bordel avec une application un peu trop grosse.
 Je conseille donc de faire au minimum une arborescence.
 Mon application est architecturée comme cela :
+
 ```shell
 ├── README.md                        # Un fichier readme qui décris l'application et la mise en œuvre.
 ├── requirements. txt                # Un fichier qui liste les paquets python nécessaires
@@ -87,7 +84,7 @@ mais si vous utilisez un serveur de production, le mode debug ne seras pas actif
 
 `app = create_app()` : On crée un l'objet app.
 
-`app.run(debug=True, host="0.0.0.0", port=5000` : 
+`app.run(debug=True, host="0.0.0.0", port=5000` :
 on lance un serveur de DEVELOPPEMENT sur l'adresse local 0.0.0.0 et sur le port 5000 avec le mode debug.
 
 Ce fichier va servir à 2 choses :
@@ -117,9 +114,11 @@ def create_app():
 ```
 
 Vous pouvez ajouter un fichier config.py pour configurer une base de données, des clés d'accès à des services ...
-Attention, protéger bien vos clés et mots de passe. Pensez variables d'environnements, 
+Attention, protéger bien vos clés et mots de passe. Pensez variables d'environnements,
 et utiliser le gitignore si vous avez un fichier avec des secrets.
+
 ### views.py
+
 Il définit les routes utilisées par l'application.
 
 ```python
@@ -150,9 +149,10 @@ En dessous, vous définissez une fonction qui va retourner la page html.
 Flask est fourni avec le front-end jinja2. Vous pouvez utiliser un autre front-end comme React ou Angular.
 On peut créer des pages html dans le dossier template et faire les routes avec views.
 Mais imaginons que j'ai plein de code qui se répète dans toutes les pages html.
-Par exemple, le fameux doctype et autre : pour éviter de tout recopier sur chaque page, autant écrire une base 
+Par exemple, le fameux doctype et autre : pour éviter de tout recopier sur chaque page, autant écrire une base
 et demander à flask/jinja d'étendre la page html.
 Exemple de fichier de base :
+
 ```html
 <pre><!DOCTYPE html>
 <html lang="fr">
@@ -164,6 +164,7 @@ Exemple de fichier de base :
 ```
 
 Fichier qui utilise la base :
+
 ```html
 {% extends 'base.html' %}
 
@@ -172,10 +173,11 @@ contenu de la page
 {% endblock %}
 ```
 
-Et voilà plus besoin de recopier le docktype partout. Vous pouvez bien sûr ajouter d'autre block 
+Et voilà plus besoin de recopier le docktype partout. Vous pouvez bien sûr ajouter d'autre block
     que content comme footer ou autre en fonction de votre projet.
 Et on peut encore aller plus loin.
 Par exemple dans ma page base/html :
+
 ```html
 <div class="topnav">
     {% for cat in liste_categorie %}
@@ -185,6 +187,7 @@ Par exemple dans ma page base/html :
 ```
 
 La topbar est créée à partir d'une liste, et d'une catégorie envoyée par flask. Rappelez-vous de la fonction :
+
 ```python
 return render_template("index.html",liste_categorie=liste_categorie,categorie=liste_categorie[0])
 ```
@@ -193,7 +196,7 @@ return render_template("index.html",liste_categorie=liste_categorie,categorie=li
 
 Besoin d'une base de données : [https://www.sqlalchemy.org/](https://www.sqlalchemy.org/){target="_blank"}
 Je conseille d'utiliser des variables d'environnement et un fichier config.py.
-La base de données va, par exemple, servir à gérer des comptes qui vont se connecter à votre site. 
+La base de données va, par exemple, servir à gérer des comptes qui vont se connecter à votre site.
 La gestion des connexions peut être faite avec flask-login.
 Le fichiers views.py commence à prendre de l'embonpoint. Diviser le avec les blueprints
 

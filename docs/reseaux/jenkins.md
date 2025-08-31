@@ -28,11 +28,12 @@ user admin
 
 mot de passe : faut le trouver.
 
-Faites un 
+Faites un
 
 ```shell
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
+
 pour avoir le password.
 
 Jenkins veut s'assurer que vous êtes bien un administrateur.
@@ -143,7 +144,7 @@ Un dernier point, des plugins existent pour Jenkins pour lui ajouter des fonctio
 Il faut être prudent avec ces plugins et les mettre à jour régulièrement.
 Ma politique est d'en utiliser le moins possible pour limiter les risques de sécurité.
 
-### meileure façon que les parametres :
+### meileure façon que les parametres
 
 Ajoutez des credentials via le menu credentials puis utilisez les avec la pipeline.
 
@@ -163,5 +164,6 @@ pipeline {
   }
 }
 ```
+
 !!!warning
     Les scripts sh qui utilisent des credentials, doivent utiliser les simples '' et non les doubles "" Cause : risque de sécurité

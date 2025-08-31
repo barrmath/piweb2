@@ -27,9 +27,9 @@ Les gestionnaires de bases de données SQL les plus couramment utilisés sont :
 - [Microsoft SQL server](https://www.microsoft.com/fr-fr/sql-server/sql-server-downloads){target="_blank"} : Une base de données de Microsoft
 - [PostgreSQL](https://www.postgresql.org/){target="_blank"} : une autre base de données open source très performante
 
-Toutes ces gestionnaires de bases de données existent souvent en version cloud. 
+Toutes ces gestionnaires de bases de données existent souvent en version cloud.
 Les fournisseurs cloud peuvent vous fournir leurs propres gestionnaires de bases de données.
-Par exemple : [Aurora](https://aws.amazon.com/fr/rds/aurora/?nc2=h_ql_prod_db_aa){target="_blank"} 
+Par exemple : [Aurora](https://aws.amazon.com/fr/rds/aurora/?nc2=h_ql_prod_db_aa){target="_blank"}
 chez aws, [Cloud SQL](https://cloud.google.com/sql/){target="_blank"} pour gcp, ...
 Pour la suite, je prends exemple sur mariaDB.
 
@@ -62,7 +62,7 @@ Et on lance avec la commande :
 podman-compose up -d
 ```
 
-La commande : 
+La commande :
 
 ```shell
 podman-compose down
@@ -90,7 +90,7 @@ On va pouvoir créer/modifier et faire quelque requête SQL grâce à ce logicie
 
 Avec DBeaver 2 méthodes pour créer des bases de données, le script SQL ou les fonctions faciles de DBeaver.
 Méthode facile : dérouler votre connecteur puis clic droit sur Database ou base de données puis créer base de données
-Ensuite donner lui un nom configurer les caractères (UTF 8 16 32 ACII ...). 
+Ensuite donner lui un nom configurer les caractères (UTF 8 16 32 ACII ...).
 Plus d'info [ici](https://en.wikipedia.org/wiki/List_of_Unicode_characters){target="_blank"}.
 
 ![creation base DBeaver](SQL/dbeaver_creation_base.png)
@@ -173,7 +173,7 @@ JOIN Clients ON BDD_a_moi.Clients.IdClient = BDD_a_moi.achat.idClient;
 ![requete2](SQL/requete2.png)
 
 Vous ne voulez que les achats de poissons ?
-Rajouter 
+Rajouter
 
 ```SQL
 WHERE produit = "poisson"
@@ -183,19 +183,18 @@ WHERE produit = "poisson"
 
 Il existe d'autres fonctions en SQL pour aller plus loin, je vous conseille le site [https://sql.sh/](https://sql.sh/){target="_blank"}
 
-
 ## Conclusion
 
-Alors j'ai déjà entendu : 
+Alors j'ai déjà entendu :
 C'est bien beau, mais je sais tout faire sur Excel, pourquoi utiliser une BDD?
 Un fichier Excel va être bloqué à chaque écriture/lecture. Donc il est accessible à une personne à la fois. (ça change avec le cloud)
 On peut, avec les BDD, les dupliquer, faire des redondances pour avoir une BDD disponible à 100 % .
 Mais s'il faut retenir une chose : **les BDD sont fiables.**
 
-Pour rappel, les données d'un fichiers Excel ne peuvent pas dépasser 
+Pour rappel, les données d'un fichiers Excel ne peuvent pas dépasser
 [certaines limites.](https://support.microsoft.com/en-us/office/excel-specifications-and-limits-1672b34d-7043-467e-8e27-269d656771c3){target="_blank"}
 Donc j'espère par exemple que vous dépasserez le million de vente. Mais éviter de les enregistrer avec Excel vous risquer de tout perdre.
-Comme les Anglais avec leurs tests covid : 
+Comme les Anglais avec leurs tests covid :
 [www.theguardian.com/](https://www.theguardian.com/politics/2020/oct/05/how-excel-may-have-caused-loss-of-16000-covid-tests-in-england){target="_blank"}
 
 Donc pour conclure : un fichier Excel c'est pour un projet de très faible envergure.

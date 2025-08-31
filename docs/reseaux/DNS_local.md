@@ -1,4 +1,5 @@
 # DNS local
+
 ## Rappel rapide sur les DNS
 
 DNS : Domain Name Server
@@ -11,7 +12,7 @@ Les DNS se renseignent auprès des registars (aussi appelé DNS racine). Lorsque
 
 Le port 53 est le port standard pour les DNS.
 
-## Pourquoi créer son DNS local :
+## Pourquoi créer son DNS local
 
 Un DNS local peut être utilisé pour plusieurs raisons :
 
@@ -38,13 +39,15 @@ Unbound est un resolveur DNS qui va vous transformer vos noms de domaine en adre
 J'ai tout simplement suivi la documentation de [pi-hole](https://docs.pi-hole.net/docker/){target="_blank"}.
 
 Premièrement création d'un dossier pihole et de son docker-compose.
+
 ```bash
 mkdir pihole
 cd pihole
 nano docker-compose.yml
 ```
 
-Le docker compose : (un peu modifié par mes soins, n´oubliez pas de changer le mot de passe dans le docker-compose.yml) 
+Le docker compose : (un peu modifié par mes soins, n´oubliez pas de changer le mot de passe dans le docker-compose.yml)
+
 ```yaml
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
 services:
@@ -91,12 +94,14 @@ Changement par rapport au docker-compose d'origine : mon système héberge déj�
 J'ai aussi changé la timezone et le mot de passe.
 
 Enregistrer le fichier (ctrl+x) et lancer la commande :
+
 ```bash
 podman-compose up -d
 ```
 
 !!!tips
-    Un message d'erreur peut venir vous expliquant que vous n'avez pas accès au port 53 via podman.Pas de panique, modifier le fichier /etc/sysctl.conf ajoutez à la fin du fichier : 
+    Un message d'erreur peut venir vous expliquant que vous n'avez pas accès au port 53 via podman.Pas de panique, modifier le fichier /etc/sysctl.conf ajoutez à la fin du fichier :
+
     ```yaml
     # for pi-hole in podman-compose
     net.ipv4.ip_unprivileged_port_start=53
@@ -104,10 +109,9 @@ podman-compose up -d
 
 Cela permettra à podman de pouvoir modifier les ports 53 et au-dessus.
 
-
 Un petit tour sur le service avec votre navigateur internet : adresse IP de votre pi et port. Par exemple 192.168.XXX.XXX:5080 ou le 5443 pour avoir un accès https.
 
-![image oops de pihole indiquant une erreur 403](DNS/pihole_oops.png) 
+![image oops de pihole indiquant une erreur 403](DNS/pihole_oops.png)
 
 Pas de panique, il suffit de cliquer sur le lien dans le message d'erreurs :
 
@@ -121,7 +125,7 @@ Mettre le mot de passe que vous avez modifié dans le docker-compose. Et vous de
 Chez moi pi-hole est déjà fonctionnel est configuré depuis plusieurs jours. Mais chez vous, il devrait y avoir beaucoup moins de requêtes, c'est normal.
 ```
 
-Si vous ne voulez que faire du filtrage et utilisez un serveur tiers, vous pouvez aller directement à la section configuration de [pi-hole.](#config-de-pi-hole-pour-passer-via-unbound). Il vous suffira de cocher les serveurs DNS voulus.
+Si vous ne voulez que faire du filtrage et utilisez un serveur tiers, vous pouvez aller directement à la section configuration de [pi-hole](#configuration-de-pi-hole-pour-passer-via-unbound). Il vous suffira de cocher les serveurs DNS voulus.
 
 ### Installation de Unbound
 
@@ -149,6 +153,7 @@ nano pi-hole.conf
 ```
 
 Et y mettre la config :
+
 ```yaml
 server:
     # If no logfile is specified, syslog is used
@@ -240,9 +245,7 @@ et cliquez sur **save and apply**
 !!!tips
     Votre raspberry a déjà une synchro horaire via un serveur. Vous pouvez desactiver les serveurs ntc en activant le menu expert en cliquant sur le bouton-slide "Basic".
 
-
-
-### Utilisez seulement Unbound.
+### Utilisez seulement Unbound
 
 Installez le avec la commande :
 
@@ -255,6 +258,7 @@ Vérifiez que unbound est bien actif avec systemd :
 ```bash
 sudo systemctl status unbound.service
 ```
+
 Dans /etc/unbound/unbound.d/ , ajoutez un fichier de configuration pour votre serveur local :
 
 ```bash
@@ -292,6 +296,7 @@ Un petit systemd restart
 ```bash
 sudo systemctl restart unbound
 ```
+
 et unbound devrait être OK
 
 ### Exemple de config de la machin-box

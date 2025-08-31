@@ -1,18 +1,18 @@
-# Monitoring 
+# Monitoring
 
-Pour surveiller le raspberry pi je vais utiliser le combo 
+Pour surveiller le raspberry pi je vais utiliser le combo
 [prometheus](https://prometheus.io/){target="_blank"} avec
 [grafana](https://grafana.com/){target="_blank"}
 
-## Prometheus : installation et configuration.
+## Prometheus : installation et configuration
 
-Prometheus est présent dans les dépôts de rasbian, du coup : 
+Prometheus est présent dans les dépôts de rasbian, du coup :
 
 ```shell
 apt-get install prometheus
 ```
 
-Il faut bien penser à demarrer le service 
+Il faut bien penser à demarrer le service
 
 ```shell
 systemctl enable prometheus
@@ -41,7 +41,7 @@ Pour vérifier le fonctionnement de prometheus vous pouvez regarder avec un navi
 
 Amusez-vous avec, faites des graphes, des alarmes en fonction de ce que vous voulez surveiller.
 
-## Grafana : installation et configuration.
+## Grafana : installation et configuration
 
 Pourquoi utiliser grafana, prometheus fait déjà des graphes ?
 Imaginer que vous devez surveiller plusieurs serveurs, l'un sur aws, l'autre sur gpc, un avec prometheus, un autre sur zabbix. (franchement pourquoi faire simple quand on peut faire compliqué?).
@@ -55,7 +55,7 @@ Pour les non-anglophones voilà la procèdure:
 
 - Ajouter une clé de dépôt:
 
-```shell 
+```shell
 sudo mkdir -p /etc/apt/keyrings/
 wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
 ```
@@ -109,8 +109,7 @@ Par exemple : le trafic réseaux, la ram, les températures CPU et autres, la pl
 
 Si vous avez des ordinateurs sous windows, vous pouvez utiliser cet agent : [OhmGraphite](https://github.com/nickbabcock/OhmGraphite){target="_blank"}
 
-Vous pouvez aussi connecter des fichiers csv, excel pour faire un peu de data. 
-
+Vous pouvez aussi connecter des fichiers csv, excel pour faire un peu de data.
 
 ## Ressources
 

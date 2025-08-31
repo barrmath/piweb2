@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[Python}(https://www.python.org/){target="_blank} est un langage de programmation interprété. 
+[Python](https://www.python.org/){target="_blank} est un langage de programmation interprété.
 Ainsi, il est indépendant de la machine tant que vous pouvez installer python sur celle-ci. Par contre, vous devez installer python.
 Il peut servir pour faire de la data science, du web, des scripts pour les administrateurs, ... Bref, il est assez polyvalent.
 En tant que langage interprété, (et non compilé), il a des performances en retrait par rapport à du C par exemple.
@@ -12,13 +12,14 @@ Pour faire un script python, crée un fichier texte avec votre éditeur favori (
 ```shell
 python nom_du_script.pi
 ```
+
 On va voir les objets de base de python, les fonctions simples de python, puis la gestion des bibliothèques et des environnements python.
 
 ## Objets de base
 
 ### Les Variables
 
-Les variables servent à stocker des valeurs dans la mémoire vive. On les déclare simplement avec un nom de variable, un signe égal, 
+Les variables servent à stocker des valeurs dans la mémoire vive. On les déclare simplement avec un nom de variable, un signe égal,
 puis la valeur. Exemple :
 
 ```python
@@ -33,6 +34,7 @@ print("le nouveau type de version est ", type(version))
 
 En testant ce script vous pouvez observer que vous pouvez changer de type de variable en cours de programme.
 Les différents type en python sont :
+
 - Bool : un 0 ou 1, vrais faux
 - int : nombre entier
 - float : nombre flottant à virgule
@@ -92,13 +94,14 @@ print (mes_choix)
 print(mes_choix["tux"])    
 ```
 
-Vous pouvez essayer avec d'autres clés.("tux" est une clé ici comme "d" ou "sarah connor"). 
+Vous pouvez essayer avec d'autres clés.("tux" est une clé ici comme "d" ou "sarah connor").
 Vous avez une clé, en entrant la clé, le dictionnaire vous donne une valeur.
 Vous trouverez les dictionnaires pour faires des conditions multiples (le switch étant arrivé avec python 3.10). Mais il peut être utile pour par exemple traduire des couleurs. Exemple :
 
 ```python
 couleurs={'blue' : '#0000FF' , 'red' : '#FF0000' , 'green' : '#0000FF', "taupe" : "it an animal not a fucking color"}
 ```
+
 La doc des dicos est [ici.](https://docs.python.org/3/tutorial/datastructures.html#dictionaries){target="_blank"}
 
 ## Conditions, Boucles, Fonctions
@@ -228,7 +231,6 @@ Une fonction peut ne pas avoir d'arguments, ni de valeurs à retourner.
 Pour information, les objets complexes comme les listes, les dataframes vont être modifier par la fonctions, alors que les variables simples comme un nombre ne le seront pas.
 Python étant programmé en C, il envoie une copie pour les objets simples, mais il envoie un pointeur avec des objets complexes.
 
-
 #### Recursivité
 
 Bon, la fonction puissance existe déjà mais on va la recréer avec ce qu'on appelle la récursivité. Lets script:
@@ -255,15 +257,15 @@ Plus d'information [ici.](https://rollbar.com/blog/python-recursionerror/#){targ
 ## Environnement, Pip et bibliothèques/modules
 
 Python existe depuis quelques années. Des millions voir des milliards de lignes de codes ont été écrites pour diverses raisons. Il y a de fortes chances pour que la fonction que vous voulez existe déjà quelque part.
-Heureusement, il existe un site qui permet de chercher des paquets python : [pypi.org](https://pypi.org/){target="_blank"}. 
+Heureusement, il existe un site qui permet de chercher des paquets python : [pypi.org](https://pypi.org/){target="_blank"}.
 Dites le à un enfant de 5 à 10 ans, ça va lui faire sa journée.
-Python va tourner dans un environnement où il aura des paquets installés ou non. 
+Python va tourner dans un environnement où il aura des paquets installés ou non.
 Il faut faire la différence entre l'environnement local et les environnements virtuels.
 
 ### Environnement local
 
-Divers programmes utilisent python, y compris des programmes importants sous Linux. 
-      Certaines distributions utilisent le gestionnaire par défaut pip, 
+Divers programmes utilisent python, y compris des programmes importants sous Linux.
+      Certaines distributions utilisent le gestionnaire par défaut pip,
       mais de plus en plus de distributions se servent de leurs propres gestionnaires de paquets pour plus de stabilité.
 Éssayer d'installer un module avec pip :
 
@@ -295,16 +297,18 @@ Mais il est plus que conseillé d'utiliser les environnements virtuels pour évi
 
 ### Environnement virtuel
 
-Pour créer un environnement virtuel, c'est relativement facile. Aller dans un dossier où vous débuter un nouveau projet python et taper : 
+Pour créer un environnement virtuel, c'est relativement facile. Aller dans un dossier où vous débuter un nouveau projet python et taper :
 
 ```shell
 python -m venv venv
 ```
 
 Pour activer l'environnement virtuel, taper :
+
 ```shell
 source venv/bin/activate
 ```
+
 Maintenant, vous pouvez utiliser pip pour installer vos modules.
 
 ### Pip
@@ -319,10 +323,10 @@ Les commandes principales de pip:
 
 Donc, avec ces simples commandes, vous pouvez débuter un projet, mettre le fichier requirements.txt dans un repo git. Un utilisateur pourra installer et tester votre programme grâce à la création d'environnement virtuels et à pip.
 
-
 ### Mise à jour pip
 
-Pour mettre à jour pip,il suffit de taper
+Pour mettre à jour pip, il suffit de taper
+
 ```shell
 pip install pip --upgrade pip
 ```
@@ -366,7 +370,7 @@ Maintenant, vous pouvez écrire :
 pd.DataFrame()
 ```
 
-Vous n'avez besoin que de la fonction DataFrame ? Pas de soucis, écrivez ceci : 
+Vous n'avez besoin que de la fonction DataFrame ? Pas de soucis, écrivez ceci :
 
 ```python
 from pandas import DataFrame
@@ -379,9 +383,7 @@ dataframe = DataFrame()
 ```
 
 !!! waning
-
       Une fausse bonne idée : from pandas import *
-
       Vous importez tout pandas sans le namespace. Du coup, vous n'avez plus besoin de taper pandas.fonction ou pd.fonction.
       MAIS imaginer que vous importer une autre bibliothèque et que cette bibliothèque à un nom de fonction identique à celle de pandas.
       Pour en avoir fait l'expérience, bon courage pour tout déboguer.
@@ -390,6 +392,7 @@ dataframe = DataFrame()
 
 Créer un dossier, créer dans celui-ci un fichier `__init__.py` et un fichier `mesfonctions.py`.
 Et importer le avec :
+
 ```python
 import Nom_du_dossierpy
 ```

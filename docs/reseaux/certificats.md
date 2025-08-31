@@ -3,9 +3,7 @@
 Les certificats vous permettent de sécuriser la connexion entre le client et le serveur en activant un cryptage entre eux.
 Ainsi, les données échangées entre le serveur et le client ne peuvent pas être lues.
 
-
 ## DNS serveur et client
-
 
 Mais avant un petit rappel sur les DNS :
 ![schema internet](autohebergement/fonctionnement_internet.png#only-light){width=600}
@@ -15,7 +13,6 @@ Mais avant un petit rappel sur les DNS :
 1. Le serveur DNS envoie une adresse IPLe client demande au serveur, situé à l'adresse IP, la page internet
 1. Le serveur envoie la page demandée
 1. Le client affiche la page certificat : une affaire de confiance
-
 
 Le but du certificat est de certifier que tout le monde est bien celui qu'il prétend. Pour ce faire, il faut un certificateur.
 Le certificateur va vérifier que l'adresse du site pointe bien vers le bon serveur.
@@ -101,13 +98,11 @@ Avec la deuxième commande, il suffit de créer un deuxième serveur dans la con
 
 Pour ma part, j'ai d'abord utilisé la première commande certbot puis modifier la configuration de nginx.
 
-
 ## Renouvellement
 
+La commande
 
-La commande 
-
-```shell 
+```shell
 certbot renew -q
 ```
 
@@ -121,4 +116,3 @@ Vous pouvez automatiser avec crontab. (crontab -e puis ajouter @monthly sudo cer
 [https://www.cloudflare.com/fr-fr/](https://www.cloudflare.com/fr-fr/){target="_blank"}
 
 [Certbot](https://certbot.eff.org/){target="_blank"}
-
