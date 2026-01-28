@@ -2,6 +2,8 @@
 
 Vous trouverez dans le menu diverses techno data :
 
+[Libre Office](libre-office.md) : suite bureautique, faute de mieux
+
 [SQL](sql.md) : Base de SQL
 
 [Pandas](pandas.md) : Base de pandas

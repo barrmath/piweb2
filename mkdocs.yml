@@ -26,6 +26,7 @@ nav:
     - Django : programmation/django.md
   - Data : 
     - data/data_intro.md
+    - Libre-Office : data/libre-office.md
     - SQL : data/sql.md
     - Pandas : data/pandas.md
     - Graphique : data/graphique.md
@@ -85,6 +86,7 @@ theme:
     - search.share
     - content.code.copy
 markdown_extensions:
+  - tables
   - admonition
   - attr_list
   - md_in_html
