@@ -44,6 +44,11 @@ Une fenêtre s'ouvre, nommez votre workflow (votre projet).
 
 Mon projet installation ici est de transformer des fichiers de la [FAO](https://www.fao.org/home/fr){target="_blank"} et de les mettre dans ma base de données MariaDB.
 
+!!! tips
+    En cas de soucis avec Wayland sous linux :  
+    Lancer avec la commande : GDK_BACKEND=x11 ./knime pour forcer la prise en charge de GTK
+
+
 Ensuite voir avec Grafana pour faire un mini-tableaux de bord avec des cartes et des filtres. On verra ce qui est possible avec mon petit serveur. Commençons par créer son premier workflow.
 
 ### Workflow
