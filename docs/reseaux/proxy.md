@@ -229,8 +229,9 @@ Bref un exemple de fichier simple :
 ```bash
 server {
     server_name pouetpouet;
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
     ssl_certificate /etc/letsencrypt/live/pouetpouet/fullchain.pem; # managed by Certbot
     ssl_certificate_key /etc/letsencrypt/live/pouetouet/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf;
