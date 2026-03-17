@@ -26,6 +26,7 @@ nav = [
     "programmation/programmation_intro.md",
     {"Git" = "programmation/git.md"},
     {"HTML/CSS" = "programmation/htmlcss.md"},
+    {"Générateur de site statique/doc" = "programmation/mkdocs.md"},
     {"Python" = "programmation/python.md"},
     {"Flask" = "programmation/flask.md"},
     {"Jinja" = "programmation/jinja.md"},
